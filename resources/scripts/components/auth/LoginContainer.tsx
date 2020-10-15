@@ -61,15 +61,18 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'Login to Continue'} css={tw`w-full flex`}>
-                    <Field
-                        type={'text'}
-                        label={'Username or Email'}
-                        id={'username'}
-                        name={'username'}
-                        light
-                    />
-                    <div css={tw`mt-6`}>
+                <LoginFormContainer title={'Login to Continue'} css={tw`w-full flex`} className={'login-container'}>
+                    <div className={'form-login-design'}>
+                        <Field
+                            type={'text'}
+                            label={'Username or Email'}
+                            id={'username'}
+                            name={'username'}
+                            light
+                        />
+                    </div>
+
+                    <div css={tw`mt-6`} className={'form-login-design'}>
                         <Field
                             type={'password'}
                             label={'Password'}
@@ -78,8 +81,8 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                             light
                         />
                     </div>
-                    <div css={tw`mt-6`}>
-                        <Button type={'submit'} size={'xlarge'} isLoading={isSubmitting}>
+                    <div css={tw`mt-6`} className={'login-button-container'}>
+                        <Button type={'submit'} size={'xlarge'} isLoading={isSubmitting} className={'button-login'}>
                             Login
                         </Button>
                     </div>
@@ -98,13 +101,15 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                         }}
                     />
                     }
-                    <div css={tw`mt-6 text-center`}>
+                    <div css={tw`mt-6 text-center`} className={'text-forgot-password'}>
                         <Link
                             to={'/auth/password'}
+                            className={'forgot-password'}
                             css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase hover:text-neutral-600`}
                         >
-                            Forgot password?
+                            Ai uitat parola?
                         </Link>
+                        <p>Contul se crează automat numai la achiziționarea de produse de pe site-ul <b>fun-network.ro</b></p>
                     </div>
                 </LoginFormContainer>
             )}

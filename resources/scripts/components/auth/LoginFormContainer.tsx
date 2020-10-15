@@ -28,34 +28,19 @@ const Container = styled.div`
     `};
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => (
-    <Container>
-        {title &&
-        <h2 css={tw`text-3xl text-center text-neutral-100 font-medium py-4`}>
-            {title}
-        </h2>
-        }
+    <Container className={'login-container-center'}>
         <FlashMessageRender css={tw`mb-2 px-1`}/>
         <Form {...props} ref={ref}>
-            <div css={tw`md:flex w-full bg-white shadow-lg rounded-lg p-6 md:pl-0 mx-1`}>
-                <div css={tw`flex-none select-none mb-6 md:mb-0 self-center`}>
-                    <img src={'/assets/svgs/pterodactyl.svg'} css={tw`block w-48 md:w-64 mx-auto`}/>
-                </div>
-                <div css={tw`flex-1`}>
+            <div css={tw`md:flex w-full bg-white shadow-lg rounded-lg p-6 md:pl-0 mx-1`} className={'login-remove-padding'}>
+                <div css={tw`flex-1`} className={'login-left-container'}>
+                    <img src={'/assets/svgs/logo-gradient.svg'} className={'login-image'}/>
+                    <p className={'login-title-left'}>Intră în cont</p>
+
                     {props.children}
                 </div>
             </div>
         </Form>
-        <p css={tw`text-center text-neutral-500 text-xs mt-4`}>
-            &copy; 2015 - 2020&nbsp;
-            <a
-                rel={'noopener nofollow noreferrer'}
-                href={'https://pterodactyl.io'}
-                target={'_blank'}
-                css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
-            >
-                Pterodactyl Software
-            </a>
-        </p>
     </Container>
 ));

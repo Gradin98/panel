@@ -59,15 +59,19 @@ export default () => {
                 <LoginFormContainer
                     title={'Request Password Reset'}
                     css={tw`w-full flex`}
+                    className={'form-login-design'}
                 >
-                    <Field
-                        light
-                        label={'Email'}
-                        description={'Enter your account email address to receive instructions on resetting your password.'}
-                        name={'email'}
-                        type={'email'}
-                    />
-                    <div css={tw`mt-6`}>
+                    <div className={'form-login-design'}>
+                        <Field
+                            light
+                            label={'Email'}
+                            description={'Enter your account email address to receive instructions on resetting your password.'}
+                            name={'email'}
+                            type={'email'}
+                        />
+                    </div>
+
+                    <div css={tw`mt-6`} className={'login-button-container'}>
                         <Button
                             type={'submit'}
                             size={'xlarge'}
@@ -92,9 +96,10 @@ export default () => {
                         }}
                     />
                     }
-                    <div css={tw`mt-6 text-center`}>
+                    <div css={tw`mt-6 text-center`} className={'text-forgot-password'}>
                         <Link
                             to={'/auth/login'}
+                            className={'forgot-password'}
                             css={tw`text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                         >
                             Return to Login
