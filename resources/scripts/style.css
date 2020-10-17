@@ -3,6 +3,10 @@
   background: linear-gradient(to right, #6F62CB 0%, #4BCEFC 100%) !important;
 }
 
+.bg-neutral-800 {
+  background: #fff !important;
+}
+
 .background-image-login {
   background: url("/assets/svgs/login-rectangle.png");
   border-top-right-radius: 20px;
@@ -49,13 +53,14 @@
   width: 165px;
 }
 
-.form-login-design {
+.form-login-design, .form-twofa-design {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-.form-login-design > input {
+.form-login-design > input, .form-twofa-design > input {
   border-radius: 24px !important;
+  background: #fff !important;
   border: 2px solid #c4c4c4 !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
@@ -63,13 +68,18 @@
   padding-bottom: 8px !important;
 }
 
-.form-login-design > label {
+.form-login-design > label, .form-twofa-design > label {
   font-family: "Open Sans", sans-serif;
   text-transform: inherit;
   font-weight: bold;
   font-size: 14px;
   color: #000;
   margin-bottom: 5px;
+}
+
+.form-twofa-design {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .login-title-left {
@@ -79,14 +89,13 @@
   font-size: 18px;
   color: #000;
   text-transform: uppercase;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 70px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.button-login {
+.button-login, .button-auth {
   border-radius: 40px !important;
-  width: 150px !important;
   height: 41px !important;
   margin-left: auto;
   margin-right: auto;
@@ -98,12 +107,64 @@
   transition: all 300ms linear 0ms !important;
 }
 
-.button-login:hover {
+.button-login:hover, .button-auth:hover {
   background-color: #777 !important;
   border-color: #777 !important;
 }
 
-.button-login > span {
+.button-login > span, .button-auth > span {
+  color: #fff !important;
+}
+
+.button-login, .button-grey, .button-red {
+  width: 150px !important;
+}
+
+.button-auth {
+  width: 200px !important;
+}
+
+.button-grey {
+  border-radius: 40px !important;
+  height: 41px !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px !important;
+  border-color: #777 !important;
+  background-color: #777 !important;
+  color: #fff !important;
+  -webkit-transition: all 300ms linear 0ms !important;
+  transition: all 300ms linear 0ms !important;
+}
+
+.button-grey:hover {
+  background-color: #a3d133 !important;
+  border-color: #a3d133 !important;
+}
+
+.button-grey > span {
+  color: #fff !important;
+}
+
+.button-red {
+  border-radius: 40px !important;
+  height: 41px !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px !important;
+  border-color: #D9534F !important;
+  background-color: #D9534F !important;
+  color: #fff !important;
+  -webkit-transition: all 300ms linear 0ms !important;
+  transition: all 300ms linear 0ms !important;
+}
+
+.button-red:hover {
+  background-color: #777 !important;
+  border-color: #777 !important;
+}
+
+.button-red > span {
   color: #fff !important;
 }
 
@@ -119,10 +180,19 @@
   text-align: left !important;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
+  margin-top: 70px !important;
 }
 
 .text-forgot-password > p {
   color: #c4c4c4;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+}
+
+.text-forgot-password > p > b {
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 700 !important;
 }
 
 .forgot-password {
@@ -131,5 +201,199 @@
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
   text-transform: initial !important;
+  font-size: 14px !important;
+  font-weight: 700;
+}
+
+.margin-forgot-password {
+  margin-top: 125px !important;
+}
+
+.navbar-design {
+  background: -webkit-gradient(linear, left top, right top, from(#6F62CB), to(#4BCEFC)) !important;
+  background: linear-gradient(to right, #6F62CB 0%, #4BCEFC 100%) !important;
+  height: 78.52px;
+  overflow-y: hidden;
+}
+
+#logo > a > img {
+  height: 50px;
+  position: relative;
+  top: 10px;
+}
+
+.navigation-link, .navigation-item {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  position: relative;
+  top: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px !important;
+  width: 30px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.navigation-link:hover, .navigation-item:hover {
+  border-radius: 8px;
+  color: #fff !important;
+  font-weight: 400 !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgba(255, 255, 255, 0.2) !important;
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.navigation-link > svg, .navigation-item > svg {
+  color: #fff !important;
+}
+
+.modal-container {
+  background: #fff !important;
+  border-radius: 20px !important;
+}
+
+.search-term-form label {
+  color: #000;
+  font-weight: 600;
+}
+
+.search-term-form input {
+  background: #fff !important;
+  border-radius: 30px !important;
+  border: 2px solid #c4c4c4 !important;
+  color: #000 !important;
+}
+
+.search-term-form p {
+  color: #c4c4c4 !important;
+}
+
+.search-result-container {
+  border-radius: 16px !important;
+  background: #000 !important;
+  border-color: #6F62CB !important;
+}
+
+.search-result-container:hover {
+  border-color: #4BCEFC !important;
+}
+
+.search-result-container .node-label {
+  color: #fff;
+  background: #6F62CB;
+}
+
+.user-container-data {
+  border-radius: 20px !important;
+  background: #fff !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.title-container {
+  text-align: center;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.twofa-color-text {
+  color: #000 !important;
+}
+
+.twofa-image-container {
+  padding: 0 !important;
+}
+
+.twofa-text-description {
+  color: #c4c4c4;
+}
+
+.input-help {
+  color: #c4c4c4 !important;
+}
+
+.image-app-stores {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.image-app-stores > img {
+  width: 50%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.image-app-stores > img:first-child {
+  padding-left: 0;
+}
+
+.image-app-stores > img:last-child {
+  padding-right: 0;
+}
+
+.twofa-image-container-margin {
+  margin-left: 10px;
+  margin-right: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.instructiuni-twofa > p {
+  color: #000 !important;
+  font-size: 0.875rem;
+}
+
+.instructiuni-twofa > p:first-child {
+  color: #000;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 5px;
+}
+
+.twofa-list-of-tokens {
+  border-radius: 20px !important;
+  background: #000 !important;
+  color: #fff !important;
+  margin-top: 10px;
+}
+
+.twofa-text-description-finish {
+  color: #000 !important;
+}
+
+.twofa-text-description-finish:last-child {
+  margin-top: 5px;
+}
+
+.twofa-text-description-finish > strong {
+  font-weight: 500;
+}
+
+.twofa-text-margin-top {
+  margin-top: 5px !important;
+}
+
+.twofa-title-text {
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 10px !important;
 }
 /*# sourceMappingURL=style.css.map */

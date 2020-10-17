@@ -56,16 +56,19 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
             onSubmit={onSubmit}
             initialValues={{ username: '', password: '' }}
             validationSchema={object().shape({
-                username: string().required('A username or email must be provided.'),
-                password: string().required('Please enter your account password.'),
+                username: string().required('Te rugăm să completezi toate câmpurile.'),
+                password: string().required('Te rugăm să completezi toate câmpurile.'),
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'Login to Continue'} css={tw`w-full flex`} className={'login-container'}>
+                <LoginFormContainer title={'INTRĂ ÎN CONT'}
+                    css={tw`w-full flex`}
+                    className={'login-container'}
+                >
                     <div className={'form-login-design'}>
                         <Field
                             type={'text'}
-                            label={'Username or Email'}
+                            label={'Email'}
                             id={'username'}
                             name={'username'}
                             light
@@ -75,7 +78,7 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                     <div css={tw`mt-6`} className={'form-login-design'}>
                         <Field
                             type={'password'}
-                            label={'Password'}
+                            label={'Parola'}
                             id={'password'}
                             name={'password'}
                             light
@@ -109,7 +112,7 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                         >
                             Ai uitat parola?
                         </Link>
-                        <p>Contul se crează automat numai la achiziționarea de produse de pe site-ul <b>fun-network.ro</b></p>
+                        <p>Contul se crează automat numai la achiziționarea produselor de pe site-ul <b>fun-network.ro</b></p>
                     </div>
                 </LoginFormContainer>
             )}

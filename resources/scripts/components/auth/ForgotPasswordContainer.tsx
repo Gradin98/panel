@@ -51,21 +51,21 @@ export default () => {
             onSubmit={handleSubmission}
             initialValues={{ email: '' }}
             validationSchema={object().shape({
-                email: string().email('A valid email address must be provided to continue.')
-                    .required('A valid email address must be provided to continue.'),
+                email: string().email('Adresa de email nu este validă.')
+                    .required('Adresa de email nu este validă.'),
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
                 <LoginFormContainer
-                    title={'Request Password Reset'}
+                    title={'Am uitat parola'}
                     css={tw`w-full flex`}
-                    className={'form-login-design'}
+                    className={'login-container'}
                 >
-                    <div className={'form-login-design'}>
+                    <div css={tw`mt-6`} className={'form-login-design'}>
                         <Field
                             light
                             label={'Email'}
-                            description={'Enter your account email address to receive instructions on resetting your password.'}
+                            description={'Introduceți adresa de email a contului pentru a primi instrucțiuni pentru resetarea parolei.'}
                             name={'email'}
                             type={'email'}
                         />
@@ -77,6 +77,7 @@ export default () => {
                             size={'xlarge'}
                             disabled={isSubmitting}
                             isLoading={isSubmitting}
+                            className={'button-login'}
                         >
                             Send Email
                         </Button>
@@ -96,14 +97,15 @@ export default () => {
                         }}
                     />
                     }
-                    <div css={tw`mt-6 text-center`} className={'text-forgot-password'}>
+                    <div css={tw`mt-6 text-center`} className={'text-forgot-password margin-forgot-password'}>
                         <Link
                             to={'/auth/login'}
                             className={'forgot-password'}
                             css={tw`text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                         >
-                            Return to Login
+                            Înapoi la Login
                         </Link>
+                        <p>Contul se crează automat numai la achiziționarea produselor de pe site-ul <b>fun-network.ro</b></p>
                     </div>
                 </LoginFormContainer>
             )}

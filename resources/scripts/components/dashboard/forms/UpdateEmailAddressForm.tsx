@@ -57,23 +57,28 @@ export default () => {
                     <React.Fragment>
                         <SpinnerOverlay size={'large'} visible={isSubmitting}/>
                         <Form css={tw`m-0`}>
-                            <Field
-                                id={'current_email'}
-                                type={'email'}
-                                name={'email'}
-                                label={'Email'}
-                            />
-                            <div css={tw`mt-6`}>
+                            <div className={'form-login-design'}>
+                                <Field
+                                    id={'current_email'}
+                                    type={'email'}
+                                    name={'email'}
+                                    label={'Email'}
+                                />
+                            </div>
+                            <div css={tw`mt-6`} className={'form-login-design'}>
                                 <Field
                                     id={'confirm_password'}
                                     type={'password'}
                                     name={'password'}
-                                    label={'Confirm Password'}
+                                    label={'Confirmă parola'}
                                 />
                             </div>
-                            <div css={tw`mt-6`}>
-                                <Button size={'small'} disabled={isSubmitting || !isValid}>
-                                    Update Email
+                            <div css={tw`mt-6`} className={'login-button-container'}>
+                                <Button size={'small'}
+                                    className={'button-login'}
+                                    disabled={isSubmitting || !isValid}
+                                >
+                                    Update
                                 </Button>
                             </div>
                         </Form>

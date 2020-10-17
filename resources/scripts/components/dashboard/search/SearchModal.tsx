@@ -75,6 +75,7 @@ export default ({ ...props }: Props) => {
     return (
         <Formik
             onSubmit={search}
+            className={'search-modal'}
             validationSchema={object().shape({
                 term: string()
                     .min(3, 'Please enter at least three characters to begin searching.')
@@ -83,7 +84,7 @@ export default ({ ...props }: Props) => {
             initialValues={{ term: '' } as Values}
         >
             <Modal {...props}>
-                <Form>
+                <Form className={'search-term-form'}>
                     <FormikFieldWrapper
                         name={'term'}
                         label={'Search term'}
@@ -95,7 +96,7 @@ export default ({ ...props }: Props) => {
                     >
                         <SearchWatcher/>
                         <InputSpinner visible={loading}>
-                            <Field as={Input} innerRef={ref} name={'term'}/>
+                            <Field as={Input} innerRef={ref} name={'term'} className={'search-label-down'}/>
                         </InputSpinner>
                     </FormikFieldWrapper>
                 </Form>
@@ -104,6 +105,7 @@ export default ({ ...props }: Props) => {
                     {
                         servers.map(server => (
                             <ServerResult
+                                className={'search-result-container'}
                                 key={server.uuid}
                                 to={`/server/${server.id}`}
                                 onClick={() => props.onDismissed()}
@@ -119,7 +121,7 @@ export default ({ ...props }: Props) => {
                                     </p>
                                 </div>
                                 <div css={tw`flex-1 text-right`}>
-                                    <span css={tw`text-xs py-1 px-2 bg-cyan-800 text-cyan-100 rounded`}>
+                                    <span css={tw`text-xs py-1 px-2 bg-cyan-800 text-cyan-100 rounded`} className={'node-label'}>
                                         {server.node}
                                     </span>
                                 </div>

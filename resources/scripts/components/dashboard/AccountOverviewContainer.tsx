@@ -28,17 +28,17 @@ export default () => {
     return (
         <PageContentBlock title={'Account Overview'}>
             <Container>
-                <ContentBox title={'Update Password'} showFlashes={'account:password'}>
+                <ContentBox title={'SCHIMBARE PAROLĂ'} showFlashes={'account:password'}>
                     <UpdatePasswordForm/>
                 </ContentBox>
                 <ContentBox
                     css={tw`mt-8 md:mt-0 md:ml-8`}
-                    title={'Update Email Address'}
+                    title={'SCHIMBARE EMAIL'}
                     showFlashes={'account:email'}
                 >
                     <UpdateEmailAddressForm/>
                 </ContentBox>
-                <ContentBox css={tw`xl:ml-8 mt-8 xl:mt-0`} title={'Configure Two Factor'}>
+                <ContentBox css={tw`xl:ml-8 mt-8 xl:mt-0`} title={'SECURITATE'}>
                     <ConfigureTwoFactorForm/>
                 </ContentBox>
             </Container>
