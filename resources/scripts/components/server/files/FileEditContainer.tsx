@@ -128,7 +128,7 @@ export default () => {
                 />
             </div>
             <div css={tw`flex justify-end mt-4`}>
-                <div css={tw`flex-1 sm:flex-none rounded bg-neutral-900 mr-4`}>
+                <div css={tw`flex-1 sm:flex-none rounded bg-neutral-900 mr-4`} className={'select-design'}>
                     <Select value={mode} onChange={e => setMode(e.currentTarget.value)}>
                         {modes.map(mode => (
                             <option key={`${mode.name}_${mode.mime}`} value={mode.mime}>
@@ -139,13 +139,13 @@ export default () => {
                 </div>
                 {action === 'edit' ?
                     <Can action={'file.update'}>
-                        <Button css={tw`flex-1 sm:flex-none`} onClick={() => save()}>
+                        <Button css={tw`flex-1 sm:flex-none`} className={'long-file-button-green'} onClick={() => save()}>
                             Save Content
                         </Button>
                     </Can>
                     :
                     <Can action={'file.create'}>
-                        <Button css={tw`flex-1 sm:flex-none`} onClick={() => setModalVisible(true)}>
+                        <Button css={tw`flex-1 sm:flex-none`} className={'long-file-button-green'} onClick={() => setModalVisible(true)}>
                             Create File
                         </Button>
                     </Can>

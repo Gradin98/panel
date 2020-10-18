@@ -85,14 +85,14 @@ const MassActionsBar = () => {
                     onDismissed={() => setShowMove(false)}
                 />
                 }
-                <div css={tw`rounded p-4 mb-6`} style={{ background: 'rgba(0, 0, 0, 0.35)' }}>
-                    <Button size={'xsmall'} css={tw`mr-4`} onClick={() => setShowMove(true)}>
+                <div css={tw`rounded p-4 mb-6`} className={'mass-container-design'}>
+                    <Button size={'xsmall'} css={tw`mr-4`} className={'file-button-green'} onClick={() => setShowMove(true)}>
                         <FontAwesomeIcon icon={faLevelUpAlt} css={tw`mr-2`}/> Move
                     </Button>
-                    <Button size={'xsmall'} css={tw`mr-4`} onClick={onClickCompress}>
+                    <Button size={'xsmall'} css={tw`mr-4`} className={'file-button-green'} onClick={onClickCompress}>
                         <FontAwesomeIcon icon={faFileArchive} css={tw`mr-2`}/> Archive
                     </Button>
-                    <Button size={'xsmall'} color={'red'} isSecondary onClick={() => setShowConfirm(true)}>
+                    <Button size={'xsmall'} color={'red'} className={'file-button-red'} isSecondary onClick={() => setShowConfirm(true)}>
                         <FontAwesomeIcon icon={faTrashAlt} css={tw`mr-2`}/> Delete
                     </Button>
                 </div>

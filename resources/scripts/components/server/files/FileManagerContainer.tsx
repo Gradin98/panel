@@ -88,7 +88,7 @@ export default () => {
                                     to={`/server/${id}/files/new${window.location.hash}`}
                                     css={tw`flex-1 sm:flex-none sm:mt-0`}
                                 >
-                                    <Button css={tw`w-full`}>
+                                    <Button css={tw`w-full`} className={'file-button-green'}>
                                         New File
                                     </Button>
                                 </NavLink>

@@ -115,7 +115,7 @@ export default ({ className }: WithClassname) => {
                 }}
             />
             <Button
-                className={className}
+                className={className + ' file-button-green'}
                 onClick={() => {
                     fileUploadInput.current
                         ? fileUploadInput.current.click()

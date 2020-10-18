@@ -73,23 +73,27 @@ export default ({ database, className }: Props) => {
                             }}
                         >
                             <FlashMessageRender byKey={'database:delete'} css={tw`mb-6`}/>
-                            <h2 css={tw`text-2xl mb-6`}>Confirm database deletion</h2>
-                            <p css={tw`text-sm`}>
+                            <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>Confirm database deletion</h2>
+                            <p css={tw`text-sm`} className={'database-description-delete'}>
                                 Deleting a database is a permanent action, it cannot be undone. This will permanetly
                                 delete the <strong>{database.name}</strong> database and remove all associated data.
                             </p>
                             <Form css={tw`m-0 mt-6`}>
-                                <Field
-                                    type={'text'}
-                                    id={'confirm_name'}
-                                    name={'confirm'}
-                                    label={'Confirm Database Name'}
-                                    description={'Enter the database name to confirm deletion.'}
-                                />
+                                <div className={'search-term-form'}>
+                                    <Field
+                                        type={'text'}
+                                        id={'confirm_name'}
+                                        name={'confirm'}
+                                        label={'Confirm Database Name'}
+                                        description={'Enter the database name to confirm deletion.'}
+                                    />
+                                </div>
+
                                 <div css={tw`mt-6 text-right`}>
                                     <Button
                                         type={'button'}
                                         isSecondary
+                                        className={'file-button-green'}
                                         css={tw`mr-2`}
                                         onClick={() => setVisible(false)}
                                     >
@@ -98,6 +102,7 @@ export default ({ database, className }: Props) => {
                                     <Button
                                         type={'submit'}
                                         color={'red'}
+                                        className={'long-file-button-red'}
                                         disabled={!isValid}
                                     >
                                         Delete Database
@@ -110,26 +115,26 @@ export default ({ database, className }: Props) => {
             </Formik>
             <Modal visible={connectionVisible} onDismissed={() => setConnectionVisible(false)}>
                 <FlashMessageRender byKey={'database-connection-modal'} css={tw`mb-6`}/>
-                <h3 css={tw`mb-6`}>Database connection details</h3>
-                <div>
+                <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>Confirm database deletion</h2>
+                <div css={tw`mt-6`} className={'search-term-form'}>
                     <Label>Endpoint</Label>
                     <Input type={'text'} readOnly value={database.connectionString} />
                 </div>
-                <div css={tw`mt-6`}>
+                <div css={tw`mt-6`} className={'search-term-form'}>
                     <Label>Connections from</Label>
                     <Input type={'text'} readOnly value={database.allowConnectionsFrom} />
                 </div>
-                <div css={tw`mt-6`}>
+                <div css={tw`mt-6`} className={'search-term-form'}>
                     <Label>Username</Label>
                     <Input type={'text'} readOnly value={database.username} />
                 </div>
                 <Can action={'database.view_password'}>
-                    <div css={tw`mt-6`}>
+                    <div css={tw`mt-6`} className={'search-term-form'}>
                         <Label>Password</Label>
                         <Input type={'text'} readOnly value={database.password}/>
                     </div>
                 </Can>
-                <div css={tw`mt-6`}>
+                <div css={tw`mt-6`} className={'search-term-form'}>
                     <Label>JBDC Connection String</Label>
                     <Input
                         type={'text'}
@@ -141,7 +146,7 @@ export default ({ database, className }: Props) => {
                     <Can action={'database.update'}>
                         <RotatePasswordButton databaseId={database.id} onUpdate={appendDatabase}/>
                     </Can>
-                    <Button isSecondary onClick={() => setConnectionVisible(false)}>
+                    <Button isSecondary className={'file-button-red'} onClick={() => setConnectionVisible(false)}>
                         Close
                     </Button>
                 </div>
@@ -166,11 +171,11 @@ export default ({ database, className }: Props) => {
                     <p css={tw`mt-1 text-2xs text-neutral-500 uppercase select-none`}>Username</p>
                 </div>
                 <div css={tw`ml-8`}>
-                    <Button isSecondary css={tw`mr-2`} onClick={() => setConnectionVisible(true)}>
+                    <Button isSecondary css={tw`mr-2`} className={'square-button-green'} onClick={() => setConnectionVisible(true)}>
                         <FontAwesomeIcon icon={faEye} fixedWidth/>
                     </Button>
                     <Can action={'database.delete'}>
-                        <Button color={'red'} isSecondary onClick={() => setVisible(true)}>
+                        <Button color={'red'} isSecondary className={'square-button-red'} onClick={() => setVisible(true)}>
                             <FontAwesomeIcon icon={faTrashAlt} fixedWidth/>
                         </Button>
                     </Can>

@@ -1,3 +1,12 @@
+.bara-loading {
+  background: -webkit-gradient(linear, left top, right top, from(#6F62CB), to(#4BCEFC)) !important;
+  background: linear-gradient(to right, #6F62CB 0%, #4BCEFC 100%) !important;
+}
+
+.bara-loading-load {
+  background: #a3d133 !important;
+}
+
 .bg-neutral-900 {
   background: -webkit-gradient(linear, left top, right top, from(#6F62CB), to(#4BCEFC)) !important;
   background: linear-gradient(to right, #6F62CB 0%, #4BCEFC 100%) !important;
@@ -5,6 +14,10 @@
 
 .bg-neutral-800 {
   background: #fff !important;
+}
+
+.white-text {
+  color: #fff !important;
 }
 
 .background-image-login {
@@ -272,6 +285,14 @@
   color: #000 !important;
 }
 
+.search-term-form input:-moz-read-only {
+  background: #c4c4c4 !important;
+}
+
+.search-term-form input:read-only {
+  background: #c4c4c4 !important;
+}
+
 .search-term-form p {
   color: #c4c4c4 !important;
 }
@@ -395,5 +416,328 @@
   color: #000;
   font-weight: 600;
   margin-bottom: 10px !important;
+}
+
+.status-offline > .icon-color-svg, .status-online > .icon-color-svg, .status-unknown > .icon-color-svg {
+  color: #fff !important;
+}
+
+.status-offline {
+  background: rgba(225, 45, 57, 0.5) !important;
+}
+
+.status-online {
+  background: rgba(24, 154, 28, 0.5) !important;
+}
+
+.status-unknown {
+  background: rgba(240, 180, 40, 0.5) !important;
+}
+
+.server-bar-hover {
+  background: #fff !important;
+  border-radius: 15px !important;
+  border: none !important;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.server-bar-hover:hover .status-offline {
+  background: rgba(225, 45, 57, 0.75) !important;
+}
+
+.server-bar-hover:hover .status-online {
+  background: rgba(24, 154, 28, 0.75) !important;
+}
+
+.server-bar-hover:hover .status-unknown {
+  background: rgba(240, 180, 40, 0.75) !important;
+}
+
+.server-bar-hover p {
+  color: #000;
+}
+
+.server-bar-hover svg {
+  color: #000;
+}
+
+.label-server-status {
+  color: #fff !important;
+  background: rgba(225, 45, 57, 0.75) !important;
+}
+
+.box-design {
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.box-design > .title {
+  color: #fff !important;
+  background: #777 !important;
+  border-bottom: 0 !important;
+}
+
+.box-design > .title > p {
+  color: #fff !important;
+}
+
+.box-design > .title > p > svg {
+  color: #fff !important;
+}
+
+.box-design > .content {
+  background-color: #fff !important;
+}
+
+.box-design > .content > p {
+  color: #000 !important;
+}
+
+.box-design > .content > p > span {
+  color: #777 !important;
+}
+
+.terminal-design {
+  background-color: #000 !important;
+  border-radius: 20px;
+}
+
+.terminal-design > div {
+  background-color: #000 !important;
+}
+
+.terminal-design > .terminal-design-input {
+  background-color: #777 !important;
+}
+
+.terminal-design > .terminal-design-input > div {
+  color: #fff !important;
+}
+
+.control-buttons-design {
+  background: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.control-buttons-design > button {
+  border-radius: 20px;
+  width: 100px;
+  border: none !important;
+  background-color: #f0b428;
+  color: #fff !important;
+  opacity: 1;
+}
+
+.control-buttons-design > button:focus {
+  outline: none !important;
+}
+
+.control-buttons-design > button:hover {
+  background-color: rgba(240, 180, 40, 0.75);
+}
+
+.control-buttons-design > button:disabled {
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  color: #fff;
+  opacity: 1;
+  border: none !important;
+  background-color: #777 !important;
+  cursor: not-allowed;
+}
+
+.control-buttons-design > button[color="green"] {
+  background-color: #189a1c;
+}
+
+.control-buttons-design > button[color="green"]:hover {
+  background-color: rgba(24, 154, 28, 0.75);
+}
+
+.control-buttons-design > button[color="red"] {
+  background-color: #e12d39;
+}
+
+.control-buttons-design > button[color="red"]:hover {
+  background-color: rgba(225, 45, 57, 0.75);
+}
+
+.file-line-design {
+  background: #777 !important;
+  border-radius: 8px !important;
+}
+
+.file-line-design > a, .file-line-design div, .file-line-design svg {
+  color: #fff;
+}
+
+.file-line-design > label > input {
+  border-color: #fff !important;
+}
+
+.file-line-design > label > input:checked {
+  background-color: #6F62CB !important;
+}
+
+.file-location-design > input {
+  border-color: #777 !important;
+}
+
+.file-location-design > input:checked {
+  background-color: #6F62CB !important;
+}
+
+.file-location-design > span, .file-location-design div {
+  color: #777 !important;
+}
+
+.file-location-design > a {
+  color: #c4c4c4 !important;
+}
+
+.file-dropdown-menu:hover {
+  background-color: #fff !important;
+}
+
+.file-dropdown-menu:hover > span, .file-dropdown-menu:hover svg {
+  color: #a3d133 !important;
+}
+
+.file-dropdown-menu > span, .file-dropdown-menu svg {
+  color: #000 !important;
+}
+
+.file-button-green, .long-file-button-green {
+  border: none !important;
+  border-radius: 20px !important;
+  background-color: #a3d133 !important;
+  color: #fff !important;
+  width: 100px !important;
+}
+
+.file-button-green:hover, .long-file-button-green:hover {
+  background-color: rgba(163, 209, 51, 0.75) !important;
+}
+
+.file-button-green:disabled, .long-file-button-green:disabled {
+  cursor: not-allowed !important;
+}
+
+.file-button-purple, .long-file-button-purple {
+  border: none !important;
+  border-radius: 20px !important;
+  background-color: #6F62CB !important;
+  color: #fff !important;
+}
+
+.file-button-purple:hover, .long-file-button-purple:hover {
+  background-color: rgba(111, 98, 203, 0.75) !important;
+}
+
+.file-button-purple:disabled, .long-file-button-purple:disabled {
+  cursor: not-allowed !important;
+}
+
+.file-button-red, .long-file-button-red {
+  border: none !important;
+  border-radius: 20px !important;
+  background-color: #e12d39 !important;
+  color: #fff !important;
+  width: 100px !important;
+}
+
+.file-button-red:hover, .long-file-button-red:hover {
+  background-color: rgba(225, 45, 57, 0.75) !important;
+}
+
+.file-button-red:disabled, .long-file-button-red:disabled {
+  cursor: not-allowed !important;
+}
+
+.long-file-button-green, .long-file-button-red, .long-file-button-purple {
+  width: 180px !important;
+}
+
+.mass-container-design {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  border-radius: 16px !important;
+}
+
+.rename-file-location-info {
+  color: #000;
+}
+
+.rename-file-location-info > strong {
+  color: #c4c4c4;
+}
+
+.rename-file-location-info > span {
+  color: #c4c4c4;
+}
+
+.CodeMirror-lines, .CodeMirror-scroll {
+  background: #212121;
+}
+
+.CodeMirror-linenumbers, .CodeMirror-foldgutter {
+  background: #1a1a1a !important;
+}
+
+.CodeMirror-gutter-elt {
+  color: #424242 !important;
+}
+
+.select-design {
+  background: transparent !important;
+}
+
+.select-design > select {
+  background-color: #fff !important;
+  border-radius: 20px !important;
+  border: 2px solid #c4c4c4 !important;
+  color: #000 !important;
+}
+
+.square-button-green {
+  background: #a3d133 !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+.square-button-green:hover {
+  background: rgba(163, 209, 51, 0.75) !important;
+}
+
+.square-button-red {
+  background: #e12d39 !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+.square-button-red:hover {
+  background: rgba(225, 45, 57, 0.75) !important;
+}
+
+.square-button-green > span > svg, .square-button-red > span > svg {
+  color: #fff !important;
+}
+
+.database-title-delete {
+  margin-bottom: 0px !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+.database-description-delete {
+  color: #c4c4c4 !important;
+}
+
+.database-description-delete > strong {
+  color: #000 !important;
+  font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */

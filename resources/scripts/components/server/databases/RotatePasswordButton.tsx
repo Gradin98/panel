@@ -39,7 +39,7 @@ export default ({ databaseId, onUpdate }: {
     };
 
     return (
-        <Button isSecondary color={'primary'} css={tw`mr-2`} onClick={rotate} isLoading={loading}>
+        <Button isSecondary color={'primary'} className={'long-file-button-purple'} css={tw`mr-2`} onClick={rotate} isLoading={loading}>
             Rotate Password
         </Button>
     );

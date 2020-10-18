@@ -10,12 +10,23 @@ $red-color: #D9534F;
 
 $font-open-sans: 'Open Sans', sans-serif;
 
+.bara-loading {
+    background: $gradient-color !important;
+}
+
+.bara-loading-load {
+    background: $green-color !important;
+}
 .bg-neutral-900{
     background: $gradient-color !important;
 }
 
 .bg-neutral-800{
     background: $white-color !important;
+}
+
+.white-text {
+    color: $white-color !important;
 }
 
 .background-image-login{
@@ -269,6 +280,10 @@ $font-open-sans: 'Open Sans', sans-serif;
         border-radius: 30px !important;
         border: 2px solid $light-gray-color !important;
         color: $black-color !important;
+
+        &:read-only {
+            background: $light-gray-color !important;
+        }
     }
 
     & p {
@@ -390,4 +405,336 @@ $font-open-sans: 'Open Sans', sans-serif;
     color: $black-color;
     font-weight: 600;
     margin-bottom: 10px !important;
+}
+
+.status-offline,.status-online,.status-unknown {
+    & > .icon-color-svg {
+        color: $white-color !important;
+    }
+}
+.status-offline {
+    background: rgba(225, 45, 57, 0.5) !important;
+}
+
+.status-online {
+    background: rgba(24, 154, 28, 0.5) !important;
+}
+
+.status-unknown {
+    background: rgba(240, 180, 40, 0.5) !important;
+}
+
+.server-bar-hover {
+    background: $white-color !important;
+    border-radius: 15px !important;
+    border: none !important;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+
+    &:hover .status-offline {
+        background: rgba(225, 45, 57, 0.75) !important;
+    }
+
+    &:hover .status-online {
+        background: rgba(24, 154, 28, 0.75) !important;
+    }
+
+    &:hover .status-unknown {
+        background: rgba(240, 180, 40, 0.75) !important;
+    }
+
+    & p {
+        color: $black-color;
+    }
+
+    & svg {
+        color: $black-color;
+    }
+}
+
+.label-server-status {
+    color: $white-color !important;
+    background: rgba(225, 45, 57, 0.75) !important;
+}
+
+.box-design {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+
+    & > .title {
+        color: $white-color !important;
+        background: $dark-gray-color !important;
+        border-bottom: 0 !important;
+
+        & > p {
+            color: $white-color !important;
+
+            & > svg {
+                color: $white-color !important;
+            }
+        }
+    }
+
+    & > .content {
+        background-color: $white-color !important;
+
+        & > p {
+            color: $black-color !important;
+
+            & > span {
+                color: $dark-gray-color !important;
+            }
+        }
+    }
+}
+
+.terminal-design {
+    background-color: $black-color !important;
+    border-radius: 20px;
+
+    & > div {
+        background-color: $black-color !important;
+    }
+
+    & > .terminal-design-input {
+        background-color: $dark-gray-color !important;
+
+        & > div {
+            color: $white-color !important;
+        }
+    }
+}
+
+.control-buttons-design {
+    background: transparent !important;
+    box-shadow: none !important;
+
+    & > button {
+        border-radius: 20px;
+        width: 100px;
+        border: none !important;
+        background-color: rgba(240, 180, 40, 1);
+        color: #fff !important;
+        opacity: 1;
+
+        &:focus {
+            outline: none !important;
+        }
+
+        &:hover {
+            background-color: rgba(240, 180, 40, 0.75);
+        }
+
+        &:disabled {
+            padding-top: 8px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 8px;
+            color: #fff;
+            opacity: 1;
+            border: none !important;
+            background-color: $dark-gray-color !important;
+            cursor: not-allowed;
+        }
+
+        &[color="green"]{
+            background-color: rgba(24, 154, 28, 1);
+
+            &:hover {
+                background-color: rgba(24, 154, 28, 0.75);
+            }
+        }
+
+        &[color="red"]{
+            background-color: rgba(225, 45, 57, 1);
+            
+            &:hover {
+                background-color: rgba(225, 45, 57, 0.75);
+            }
+        }
+    }
+}
+
+.file-line-design {
+    background: $dark-gray-color !important;
+    border-radius: 8px !important;
+
+    & > a, div, svg {
+        color: $white-color;
+    }
+
+    & > label > input {
+        border-color: $white-color !important;
+
+        &:checked {
+            background-color: $purple-color !important;
+        }
+    }
+}
+
+.file-location-design {
+    & > input {
+        border-color: $dark-gray-color !important;
+
+        &:checked {
+            background-color: $purple-color !important;
+        }
+    }
+
+    & > span, div {
+        color: $dark-gray-color !important;
+    }
+
+    & > a {
+        color: $light-gray-color !important
+    }
+
+
+}
+
+.file-dropdown-menu {
+
+    &:hover {
+        background-color: $white-color !important;
+        & > span, svg {
+            color: $green-color !important;
+        }
+    }
+
+    & > span, svg {
+        color: $black-color !important;
+    }
+}
+
+.file-button-green, .long-file-button-green {
+    border: none !important;
+    border-radius: 20px !important;
+    background-color: $green-color !important;
+    color: $white-color !important;
+    width: 100px !important;
+
+    &:hover {
+        background-color: rgba(163, 209, 51, 0.75) !important;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+    }
+    
+}
+
+.file-button-purple, .long-file-button-purple  {
+    border: none !important;
+    border-radius: 20px !important;
+    background-color: $purple-color !important;
+    color: $white-color !important;
+
+    &:hover {
+        background-color: rgba(111, 98, 203, 0.75) !important;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+    }
+}
+
+.file-button-red, .long-file-button-red {
+    border: none !important;
+    border-radius: 20px !important;
+    background-color: rgba(225, 45, 57, 1) !important;
+    color: $white-color !important;
+    width: 100px !important;
+    
+    &:hover {
+        background-color: rgba(225, 45, 57, 0.75) !important;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+    }
+}
+
+.long-file-button-green, .long-file-button-red, .long-file-button-purple  {
+    width: 180px !important;
+}
+
+.mass-container-design {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    border-radius: 16px !important;
+}
+
+.rename-file-location-info {
+    color: $black-color;
+    & > strong {
+        color: $light-gray-color;
+    }
+
+    & > span {
+        color: $light-gray-color;
+    }
+}
+
+.CodeMirror-lines, .CodeMirror-scroll {
+    background: #212121;
+}
+
+.CodeMirror-linenumbers, .CodeMirror-foldgutter {
+    background: #1a1a1a !important;
+}
+
+.CodeMirror-gutter-elt {
+    color: #424242 !important;
+}
+
+.select-design {
+    background: transparent !important;
+
+    & > select {
+        background-color: $white-color !important;
+        border-radius: 20px !important;
+        border: 2px solid $light-gray-color !important;
+        color: $black-color !important;
+    }
+
+}
+
+.square-button-green {
+    background: $green-color !important;
+    border-radius: 8px !important;
+    border: none !important;
+
+    &:hover {
+        background: rgba(163, 209, 51, 0.75) !important;
+    }
+}
+
+.square-button-red {
+    background: rgba(225, 45, 57, 1) !important;
+    border-radius: 8px !important;
+    border: none !important;
+    
+    &:hover {
+        background:  rgba(225, 45, 57, 0.75) !important;
+    }
+}
+
+.square-button-green, .square-button-red {
+    & > span {
+        & > svg {
+            color: $white-color !important;
+        }
+    }
+}
+
+.database-title-delete {
+    margin-bottom: 0px !important;
+    color: $black-color !important;
+    font-weight: 600 !important;
+}
+
+.database-description-delete{
+    color: $light-gray-color !important;
+
+    & > strong {
+        color: $black-color !important;
+        font-weight: 500;
+    }
 }
