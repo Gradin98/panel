@@ -19,12 +19,29 @@ export default styled.div<{ $hoverable?: boolean }>`
         & > div {
             color: #000;
 
+
             & > span {
                 color: #000;
             }
 
             & > p {
                 color: #000;
+            }
+
+            & > label {
+                color: #000;
+            }
+
+            & > code {
+                color: #000;
+                background: #777 !important;
+            }
+
+            & > textarea {
+                background: #fff !important;
+                color: #000;
+                border-radius: 20px;
+                border: 2px solid #c4c4c4;
             }
 
             & > div {
@@ -34,6 +51,14 @@ export default styled.div<{ $hoverable?: boolean }>`
     
                 & > p {
                     color: #000;
+                }
+                
+            }
+
+            & > button {
+
+                & > svg {
+                    color: #000 !important;
                 }
             }
         }

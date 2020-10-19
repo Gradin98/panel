@@ -93,17 +93,17 @@ export default ({ backup }: Props) => {
                 >
                     <div css={tw`text-sm`}>
                         <Can action={'backup.download'}>
-                            <DropdownButtonRow onClick={() => doDownload()}>
+                            <DropdownButtonRow className={'file-dropdown-menu'} onClick={() => doDownload()}>
                                 <FontAwesomeIcon fixedWidth icon={faCloudDownloadAlt} css={tw`text-xs`}/>
                                 <span css={tw`ml-2`}>Download</span>
                             </DropdownButtonRow>
                         </Can>
-                        <DropdownButtonRow onClick={() => setVisible(true)}>
+                        <DropdownButtonRow className={'file-dropdown-menu'} onClick={() => setVisible(true)}>
                             <FontAwesomeIcon fixedWidth icon={faLock} css={tw`text-xs`}/>
                             <span css={tw`ml-2`}>Checksum</span>
                         </DropdownButtonRow>
                         <Can action={'backup.delete'}>
-                            <DropdownButtonRow danger onClick={() => setDeleteVisible(true)}>
+                            <DropdownButtonRow className={'file-dropdown-menu'} danger onClick={() => setDeleteVisible(true)}>
                                 <FontAwesomeIcon fixedWidth icon={faTrashAlt} css={tw`text-xs`}/>
                                 <span css={tw`ml-2`}>Delete</span>
                             </DropdownButtonRow>

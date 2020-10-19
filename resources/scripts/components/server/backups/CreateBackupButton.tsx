@@ -25,15 +25,15 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
         <Modal {...props} showSpinnerOverlay={isSubmitting}>
             <Form>
                 <FlashMessageRender byKey={'backups:create'} css={tw`mb-4`}/>
-                <h2 css={tw`text-2xl mb-6`}>Create server backup</h2>
-                <div css={tw`mb-6`}>
+                <h2 css={tw`text-2xl mb-6`}  className={'database-title-delete'}>Create server backup</h2>
+                <div css={tw`mt-6`} className={'search-term-form'}>
                     <Field
                         name={'name'}
                         label={'Backup name'}
                         description={'If provided, the name that should be used to reference this backup.'}
                     />
                 </div>
-                <div css={tw`mb-6`}>
+                <div css={tw`mt-6`} className={'search-term-form'}>
                     <FormikFieldWrapper
                         name={'ignored'}
                         label={'Ignored Files & Directories'}
@@ -48,7 +48,7 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
                     </FormikFieldWrapper>
                 </div>
                 <div css={tw`flex justify-end`}>
-                    <Button type={'submit'} disabled={isSubmitting}>
+                    <Button type={'submit'} className={'long-file-button-green'} disabled={isSubmitting}>
                         Start backup
                     </Button>
                 </div>
@@ -94,7 +94,7 @@ export default () => {
                 <ModalContent appear visible={visible} onDismissed={() => setVisible(false)}/>
             </Formik>
             }
-            <Button css={tw`w-full sm:w-auto`} onClick={() => setVisible(true)}>
+            <Button className={'long-file-button-green'} css={tw`w-full sm:w-auto`} onClick={() => setVisible(true)}>
                 Create backup
             </Button>
         </>

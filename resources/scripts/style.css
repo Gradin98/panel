@@ -273,23 +273,28 @@
   border-radius: 20px !important;
 }
 
+.modal-container > pre {
+  background: #777 !important;
+  border-radius: 20px;
+}
+
 .search-term-form label {
   color: #000;
   font-weight: 600;
 }
 
-.search-term-form input {
+.search-term-form input, .search-term-form textarea {
   background: #fff !important;
   border-radius: 30px !important;
   border: 2px solid #c4c4c4 !important;
   color: #000 !important;
 }
 
-.search-term-form input:-moz-read-only {
+.search-term-form input:-moz-read-only, .search-term-form textarea:-moz-read-only {
   background: #c4c4c4 !important;
 }
 
-.search-term-form input:read-only {
+.search-term-form input:read-only, .search-term-form textarea:read-only {
   background: #c4c4c4 !important;
 }
 
@@ -498,6 +503,127 @@
   color: #777 !important;
 }
 
+.box-design > .content > div > div > div {
+  border-color: #6F62CB !important;
+}
+
+.box-design > .content > div > div > div > p {
+  color: #000 !important;
+}
+
+.box-design > .content > div > div > a {
+  border: none !important;
+  border-radius: 20px !important;
+  background-color: #a3d133 !important;
+  color: #fff !important;
+  min-width: 100px !important;
+}
+
+.box-design > .content > div > div > a:hover {
+  background-color: rgba(163, 209, 51, 0.75) !important;
+}
+
+.box-design > .content > div > div > a:disabled {
+  cursor: not-allowed !important;
+}
+
+.box-design > .content > div > input {
+  color: #000 !important;
+  background: #fff !important;
+  border-radius: 20px !important;
+  border: 2px solid #c4c4c4 !important;
+}
+
+.box-design > .content > div > label {
+  color: #000;
+  font-weight: 600;
+}
+
+.box-design > .content > div > button {
+  border-radius: 20px;
+  min-width: 100px;
+  border: none !important;
+  background-color: #f0b428;
+  color: #fff !important;
+  opacity: 1;
+}
+
+.box-design > .content > div > button:focus {
+  outline: none !important;
+}
+
+.box-design > .content > div > button:hover {
+  background-color: rgba(240, 180, 40, 0.75);
+}
+
+.box-design > .content > div > button:disabled {
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  color: #fff;
+  opacity: 1;
+  border: none !important;
+  background-color: #777 !important;
+  cursor: not-allowed;
+}
+
+.box-design > .content > div > button[color="green"] {
+  background-color: #189a1c;
+}
+
+.box-design > .content > div > button[color="green"]:hover {
+  background-color: rgba(24, 154, 28, 0.75);
+}
+
+.box-design > .content > div > button[color="red"] {
+  background-color: #e12d39;
+}
+
+.box-design > .content > div > button[color="red"]:hover {
+  background-color: rgba(225, 45, 57, 0.75);
+}
+
+.box-design > .content > form > label {
+  color: #000;
+  font-weight: 600;
+}
+
+.box-design > .content > form > input {
+  background: #fff !important;
+  border-radius: 30px !important;
+  border: 2px solid #c4c4c4 !important;
+  color: #000 !important;
+}
+
+.box-design > .content > form > input:-moz-read-only {
+  background: #c4c4c4 !important;
+}
+
+.box-design > .content > form > input:read-only {
+  background: #c4c4c4 !important;
+}
+
+.box-design > .content > form > p {
+  color: #c4c4c4 !important;
+}
+
+.box-design > .content > form > div > button {
+  border: none !important;
+  border-radius: 20px !important;
+  background-color: #a3d133 !important;
+  color: #fff !important;
+  width: 100px !important;
+}
+
+.box-design > .content > form > div > button:hover {
+  background-color: rgba(163, 209, 51, 0.75) !important;
+}
+
+.box-design > .content > form > div > button:disabled {
+  cursor: not-allowed !important;
+}
+
 .terminal-design {
   background-color: #000 !important;
   border-radius: 20px;
@@ -659,7 +785,7 @@
 }
 
 .long-file-button-green, .long-file-button-red, .long-file-button-purple {
-  width: 180px !important;
+  min-width: 180px !important;
 }
 
 .mass-container-design {
@@ -739,5 +865,11 @@
 .database-description-delete > strong {
   color: #000 !important;
   font-weight: 500;
+}
+
+.startup-design-readonly {
+  background: #777 !important;
+  color: #000 !important;
+  border-radius: 20px !important;
 }
 /*# sourceMappingURL=style.css.map */

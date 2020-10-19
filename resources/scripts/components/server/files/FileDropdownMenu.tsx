@@ -129,7 +129,7 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
             <ConfirmationModal
                 visible={showConfirmation}
                 title={`Delete this ${file.isFile ? 'File' : 'Directory'}?`}
-                buttonText={`Yes, Delete ${file.isFile ? 'File' : 'Directory'}`}
+                buttonText={`Delete ${file.isFile ? 'File' : 'Directory'}`}
                 onConfirmed={doDeletion}
                 onModalDismissed={() => setShowConfirmation(false)}
             >

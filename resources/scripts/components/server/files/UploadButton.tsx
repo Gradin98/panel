@@ -16,6 +16,14 @@ import { WithClassname } from '@/components/types';
 const InnerContainer = styled.div`
   max-width: 600px;
   ${tw`bg-black w-full border-4 border-primary-500 border-dashed rounded p-10 mx-10`}
+  border-color: #a3d133;
+  background-color: #000;
+  border-style: solid;
+  border-width: 2px;
+
+  & > p {
+      color: #fff;
+  }
 `;
 
 export default ({ className }: WithClassname) => {
