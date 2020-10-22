@@ -91,6 +91,7 @@ const PermissionTitledBox = memo(({ isEditable, permission, permissions, classNa
                     <p css={tw`text-sm uppercase flex-1`}>{permission}</p>
                     {isEditable &&
                     <Input
+                        className={''}
                         type={'checkbox'}
                         checked={permissions.every(p => values.permissions.includes(p))}
                         onChange={onCheckboxClicked}
@@ -132,7 +133,7 @@ const EditSubuserModal = forwardRef<HTMLHeadingElement, Props>(({ subuser, ...pr
 
     return (
         <Modal {...props} top={false} showSpinnerOverlay={isSubmitting}>
-            <h2 css={tw`text-2xl`} ref={ref}>
+            <h2 css={tw`text-2xl`} className={'database-title-delete'} ref={ref}>
                 {subuser ?
                     `${canEditUser ? 'Modify' : 'View'} permissions for ${subuser.email}`
                     :
@@ -149,7 +150,7 @@ const EditSubuserModal = forwardRef<HTMLHeadingElement, Props>(({ subuser, ...pr
             </div>
             }
             {!subuser &&
-            <div css={tw`mt-6`}>
+            <div css={tw`mt-6`} className={'search-term-form'}>
                 <Field
                     name={'email'}
                     label={'User Email'}
@@ -203,7 +204,7 @@ const EditSubuserModal = forwardRef<HTMLHeadingElement, Props>(({ subuser, ...pr
             </div>
             <Can action={subuser ? 'user.update' : 'user.create'}>
                 <div css={tw`pb-6 flex justify-end`}>
-                    <Button type={'submit'} css={tw`w-full sm:w-auto`}>
+                    <Button type={'submit'} className={subuser ? 'file-button-green' : 'long-file-button-green'} css={tw`w-full sm:w-auto`}>
                         {subuser ? 'Save' : 'Invite User'}
                     </Button>
                 </div>

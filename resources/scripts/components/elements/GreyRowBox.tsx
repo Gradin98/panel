@@ -6,15 +6,29 @@ export default styled.div<{ $hoverable?: boolean }>`
     background: #fff;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
     border: none !important;
 
     &:hover {
         border: none !important;
     }
 
+    & > button {
+
+        & > svg {
+            color: #000;
+        }
+    }
+
     & > div {
         color: #000;
+
+        & > button {
+
+            & > svg {
+                color: #000;
+            }
+        }
 
         & > div {
             color: #000;

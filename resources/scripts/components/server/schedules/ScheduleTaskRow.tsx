@@ -56,7 +56,7 @@ export default ({ schedule, task }: Props) => {
     const [ title, icon ] = getActionDetails(task.action);
 
     return (
-        <div css={tw`flex flex-wrap items-center bg-neutral-700 border border-neutral-600 mb-2 px-6 py-4 rounded`}>
+        <div css={tw`flex flex-wrap items-center bg-neutral-700 border border-neutral-600 mb-2 px-6 py-4 rounded`} className={'row-container-design'}>
             <SpinnerOverlay visible={isLoading} fixed size={'large'}/>
             {isEditing && <TaskDetailsModal
                 schedule={schedule}

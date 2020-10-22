@@ -70,7 +70,7 @@ export default ({ match, history, location: { state } }: RouteComponentProps<Par
                     />
                     <div css={tw`flex items-center mt-8 mb-4`}>
                         <div css={tw`flex-1`}>
-                            <h2 css={tw`text-2xl`}>Configured Tasks</h2>
+                            <h2 css={tw`text-2xl`} className={'database-title-delete'}>Configured Tasks</h2>
                         </div>
                     </div>
                     {schedule.tasks.length > 0 ?
@@ -101,7 +101,7 @@ export default ({ match, history, location: { state } }: RouteComponentProps<Par
                             />
                         </Can>
                         <Can action={'schedule.update'}>
-                            <Button css={tw`mr-4`} onClick={() => setShowEditModal(true)}>
+                            <Button className={'file-button-green'} css={tw`mr-4`} onClick={() => setShowEditModal(true)}>
                                 Edit
                             </Button>
                             <NewTaskButton schedule={schedule}/>

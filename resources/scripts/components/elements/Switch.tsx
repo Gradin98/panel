@@ -64,14 +64,16 @@ const Switch = ({ name, label, description, defaultChecked, onChange, children }
             </ToggleContainer>
             {(label || description) &&
             <div css={tw`ml-4 w-full`}>
-                {label &&
-                <Label
-                    css={[ tw`cursor-pointer`, !!description && tw`mb-0` ]}
-                    htmlFor={uuid}
-                >
-                    {label}
-                </Label>
-                }
+                <div>
+                    {label &&
+                    <Label
+                        css={[ tw`cursor-pointer`, !!description && tw`mb-0` ]}
+                        htmlFor={uuid}
+                    >
+                        {label}
+                    </Label>
+                    }
+                </div>
                 {description &&
                 <p css={tw`text-neutral-400 text-sm mt-2`}>
                     {description}

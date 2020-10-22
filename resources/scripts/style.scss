@@ -48,6 +48,33 @@ $font-open-sans: 'Open Sans', sans-serif;
     }
 }
 
+@media only screen and (max-width: 576px) {
+    .login-container{
+        margin: 10px !important;
+    }
+
+}
+
+@media only screen and (max-height: 600px){
+    .login-container-center {
+        overflow: auto !important;
+        width: 100%;
+        height: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+
+    .login-left-container {
+        & > .form-login-design {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
+}
+
 .login-container-right-content{
     width: 450px;
 }
@@ -230,6 +257,7 @@ $font-open-sans: 'Open Sans', sans-serif;
         height: 50px;
         position: relative;
         top: 10px;
+        margin-left: 10px;
     }
 }
 
@@ -293,6 +321,18 @@ $font-open-sans: 'Open Sans', sans-serif;
 
     & p {
         color: $light-gray-color !important;
+    }
+
+    & select {
+        background: $white-color !important;
+        border-radius: 30px !important;
+        border: 2px solid $light-gray-color !important;
+        color: $black-color !important;
+        background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right $white-color !important;
+        -webkit-appearance: none;
+        background-position: calc(100% - 10px) !important;
+        cursor: pointer;
+
     }
 }
 
@@ -461,6 +501,11 @@ $font-open-sans: 'Open Sans', sans-serif;
     background: rgba(225, 45, 57, 0.75) !important;
 }
 
+.label-scheduler-green {
+    color: $white-color !important;
+    background: $green-color !important;
+}
+
 .box-design {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
 
@@ -476,6 +521,26 @@ $font-open-sans: 'Open Sans', sans-serif;
                 color: $white-color !important;
             }
         }
+
+        & > div {
+            & > p {
+                color: $white-color !important;
+    
+                & > svg {
+                    color: $white-color !important;
+                }
+            }
+
+            & > input[type="checkbox"]{
+                border-color: $white-color !important;
+
+                &:checked {
+                    background-color: $purple-color !important;
+                    color: $white-color !important;
+                }
+                
+            }
+        }
     }
 
     & > .content {
@@ -486,6 +551,32 @@ $font-open-sans: 'Open Sans', sans-serif;
 
             & > span {
                 color: $dark-gray-color !important;
+            }
+        }
+
+        & > label {
+
+            &:hover {
+                background: $white-color !important;
+                border-color: $white-color !important;
+            }
+
+            & > div {
+                & > input[type="checkbox"]{
+                    border-color: $black-color !important;
+    
+                    &:checked {
+                        background-color: $purple-color !important;
+                        color: $white-color !important;
+                    }
+                    
+                }
+
+                & > p {
+                    color: $black-color !important;
+                    margin-bottom: 0 !important;
+                    margin-top: 0 !important;
+                }
             }
         }
 
@@ -792,7 +883,21 @@ $font-open-sans: 'Open Sans', sans-serif;
 .mass-container-design {
     background-color: rgba(0, 0, 0, 0.75) !important;
     border-radius: 16px !important;
+
+    @media (max-width: 380px) {
+        text-align: center !important;
+
+        & > button {
+            margin: 0 10px 10px 10px;
+
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+        }
+    }
+    
 }
+
 
 .rename-file-location-info {
     color: $black-color;
@@ -876,4 +981,62 @@ $font-open-sans: 'Open Sans', sans-serif;
     background: $dark-gray-color !important;
     color: $black-color !important;
     border-radius: 20px !important;
+}
+
+.search-term-form-switch {
+    background: $white-color !important;
+    border-radius: 20px !important;
+    border: 2px solid $light-gray-color !important;
+
+    & label {
+        color: $black-color;
+        font-weight: 600;
+    }
+
+    & p {
+        color: $light-gray-color;
+    }
+
+    & > div > div > div {
+        & > input[type="checkbox"]:checked + label {
+            background: $purple-color !important;
+        }
+
+        & > label {
+            border-color: $purple-color !important;
+            background: $dark-gray-color !important;
+        }
+    }
+}
+
+.row-container-design {
+    background: $white-color !important;
+    color: $black-color !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+    border: none !important;
+    margin-bottom: 20px !important;
+
+    & > svg {
+        color: $black-color;
+    }
+
+    & > button {
+        & > svg {
+            color: $black-color;
+        }
+    }
+
+    & > div {
+        & > p {
+            color: $black-color;
+        }
+
+        & > div {
+            & > div {
+                background: $dark-gray-color;
+            }
+        }
+        
+    }
 }

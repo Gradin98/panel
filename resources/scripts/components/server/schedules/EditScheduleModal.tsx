@@ -30,25 +30,27 @@ const EditScheduleModal = ({ schedule, ...props }: Omit<Props, 'onScheduleUpdate
 
     return (
         <Modal {...props} showSpinnerOverlay={isSubmitting}>
-            <h3 css={tw`text-2xl mb-6`}>{schedule ? 'Edit schedule' : 'Create new schedule'}</h3>
+            <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>{schedule ? 'Edit schedule' : 'Create new schedule'}</h2>
             <FlashMessageRender byKey={'schedule:edit'} css={tw`mb-6`}/>
             <Form>
-                <Field
-                    name={'name'}
-                    label={'Schedule name'}
-                    description={'A human readable identifer for this schedule.'}
-                />
+                <div css={tw`mt-6`} className={'search-term-form'}>
+                    <Field
+                        name={'name'}
+                        label={'Schedule name'}
+                        description={'A human readable identifer for this schedule.'}
+                    />
+                </div>
                 <div css={tw`grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6`}>
-                    <div>
+                    <div className={'search-term-form'}>
                         <Field name={'minute'} label={'Minute'}/>
                     </div>
-                    <div>
+                    <div className={'search-term-form'}>
                         <Field name={'hour'} label={'Hour'}/>
                     </div>
-                    <div>
+                    <div className={'search-term-form'}>
                         <Field name={'dayOfMonth'} label={'Day of month'}/>
                     </div>
-                    <div>
+                    <div className={'search-term-form'}>
                         <Field name={'dayOfWeek'} label={'Day of week'}/>
                     </div>
                 </div>
@@ -56,7 +58,7 @@ const EditScheduleModal = ({ schedule, ...props }: Omit<Props, 'onScheduleUpdate
                     The schedule system supports the use of Cronjob syntax when defining when tasks should begin
                     running. Use the fields above to specify when these tasks should begin running.
                 </p>
-                <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`}>
+                <div css={tw`mt-6 bg-neutral-700 border border-neutral-800 shadow-inner p-4 rounded`} className={'search-term-form-switch'}>
                     <FormikSwitch
                         name={'enabled'}
                         description={'If disabled, this schedule and it\'s associated tasks will not run.'}
@@ -64,7 +66,7 @@ const EditScheduleModal = ({ schedule, ...props }: Omit<Props, 'onScheduleUpdate
                     />
                 </div>
                 <div css={tw`mt-6 text-right`}>
-                    <Button css={tw`w-full sm:w-auto`} type={'submit'} disabled={isSubmitting}>
+                    <Button css={tw`w-full sm:w-auto`} className={'long-file-button-green'} type={'submit'} disabled={isSubmitting}>
                         {schedule ? 'Save changes' : 'Create schedule'}
                     </Button>
                 </div>

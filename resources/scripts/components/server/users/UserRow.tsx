@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Subuser } from '@/state/server/subusers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt, faUnlockAlt, faUserLock } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faPencilAlt, faUnlockAlt, faUserLock } from '@fortawesome/free-solid-svg-icons';
 import RemoveSubuserButton from '@/components/server/users/RemoveSubuserButton';
 import EditSubuserModal from '@/components/server/users/EditSubuserModal';
 import Can from '@/components/elements/Can';
@@ -27,8 +27,8 @@ export default ({ subuser }: Props) => {
                 onDismissed={() => setVisible(false)}
             />
             }
-            <div css={tw`w-10 h-10 rounded-full bg-white border-2 border-neutral-800 overflow-hidden hidden md:block`}>
-                <img css={tw`w-full h-full`} src={`${subuser.image}?s=400`}/>
+            <div css={tw`hidden md:block`}>
+                <FontAwesomeIcon icon={faUser} fixedWidth/>
             </div>
             <div css={tw`ml-4 flex-1 overflow-hidden`}>
                 <p css={tw`text-sm truncate`}>{subuser.email}</p>

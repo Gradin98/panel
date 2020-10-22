@@ -115,7 +115,7 @@ export default ({ database, className }: Props) => {
             </Formik>
             <Modal visible={connectionVisible} onDismissed={() => setConnectionVisible(false)}>
                 <FlashMessageRender byKey={'database-connection-modal'} css={tw`mb-6`}/>
-                <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>Confirm database deletion</h2>
+                <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>Database connection details</h2>
                 <div css={tw`mt-6`} className={'search-term-form'}>
                     <Label>Endpoint</Label>
                     <Input type={'text'} readOnly value={database.connectionString} />

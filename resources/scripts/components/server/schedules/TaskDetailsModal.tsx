@@ -45,9 +45,9 @@ const TaskDetailsForm = ({ isEditingTask }: { isEditingTask: boolean }) => {
 
     return (
         <Form css={tw`m-0`}>
-            <h2 css={tw`text-2xl mb-6`}>{isEditingTask ? 'Edit Task' : 'Create Task'}</h2>
+            <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>{isEditingTask ? 'Edit Task' : 'Create Task'}</h2>
             <div css={tw`flex`}>
-                <div css={tw`mr-2 w-1/3`}>
+                <div css={tw`mr-2 w-1/3`} className={'search-term-form'}>
                     <Label>Action</Label>
                     <FormikFieldWrapper name={'action'}>
                         <FormikField as={Select} name={'action'}>
@@ -57,7 +57,7 @@ const TaskDetailsForm = ({ isEditingTask }: { isEditingTask: boolean }) => {
                         </FormikField>
                     </FormikFieldWrapper>
                 </div>
-                <div css={tw`flex-1 ml-6`}>
+                <div css={tw`flex-1 ml-6`} className={'search-term-form'}>
                     <Field
                         name={'timeOffset'}
                         label={'Time offset (in seconds)'}
@@ -67,7 +67,7 @@ const TaskDetailsForm = ({ isEditingTask }: { isEditingTask: boolean }) => {
             </div>
             <div css={tw`mt-6`}>
                 {action === 'command' ?
-                    <div>
+                    <div className={'search-term-form'}>
                         <Label>Payload</Label>
                         <FormikFieldWrapper name={'payload'}>
                             <FormikField as={Textarea} name={'payload'} rows={6} />
@@ -75,7 +75,7 @@ const TaskDetailsForm = ({ isEditingTask }: { isEditingTask: boolean }) => {
                     </div>
                     :
                     action === 'power' ?
-                        <div>
+                        <div className={'search-term-form'}>
                             <Label>Payload</Label>
                             <FormikFieldWrapper name={'payload'}>
                                 <FormikField as={Select} name={'payload'}>
@@ -87,7 +87,7 @@ const TaskDetailsForm = ({ isEditingTask }: { isEditingTask: boolean }) => {
                             </FormikFieldWrapper>
                         </div>
                         :
-                        <div>
+                        <div className={'search-term-form'}>
                             <Label>Ignored Files</Label>
                             <FormikFieldWrapper
                                 name={'payload'}
@@ -99,7 +99,7 @@ const TaskDetailsForm = ({ isEditingTask }: { isEditingTask: boolean }) => {
                 }
             </div>
             <div css={tw`flex justify-end mt-6`}>
-                <Button type={'submit'} disabled={isSubmitting}>
+                <Button type={'submit'} disabled={isSubmitting} className={'long-file-button-green'}>
                     {isEditingTask ? 'Save Changes' : 'Create Task'}
                 </Button>
             </div>

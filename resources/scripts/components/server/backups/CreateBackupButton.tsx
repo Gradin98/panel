@@ -25,7 +25,7 @@ const ModalContent = ({ ...props }: RequiredModalProps) => {
         <Modal {...props} showSpinnerOverlay={isSubmitting}>
             <Form>
                 <FlashMessageRender byKey={'backups:create'} css={tw`mb-4`}/>
-                <h2 css={tw`text-2xl mb-6`}  className={'database-title-delete'}>Create server backup</h2>
+                <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>Create server backup</h2>
                 <div css={tw`mt-6`} className={'search-term-form'}>
                     <Field
                         name={'name'}

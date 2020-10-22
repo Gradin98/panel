@@ -39,6 +39,33 @@
   border-radius: 20px;
 }
 
+@media only screen and (max-width: 576px) {
+  .login-container {
+    margin: 10px !important;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .login-container-center {
+    overflow: auto !important;
+    width: 100%;
+    height: auto !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .login-left-container > .form-login-design {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
 .login-container-right-content {
   width: 450px;
 }
@@ -233,6 +260,7 @@
   height: 50px;
   position: relative;
   top: 10px;
+  margin-left: 10px;
 }
 
 .navigation-link, .navigation-item {
@@ -300,6 +328,17 @@
 
 .search-term-form p {
   color: #c4c4c4 !important;
+}
+
+.search-term-form select {
+  background: #fff !important;
+  border-radius: 30px !important;
+  border: 2px solid #c4c4c4 !important;
+  color: #000 !important;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #fff !important;
+  -webkit-appearance: none;
+  background-position: calc(100% - 10px) !important;
+  cursor: pointer;
 }
 
 .search-result-container {
@@ -472,6 +511,11 @@
   background: rgba(225, 45, 57, 0.75) !important;
 }
 
+.label-scheduler-green {
+  color: #fff !important;
+  background: #a3d133 !important;
+}
+
 .box-design {
   -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
           box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
@@ -491,6 +535,23 @@
   color: #fff !important;
 }
 
+.box-design > .title > div > p {
+  color: #fff !important;
+}
+
+.box-design > .title > div > p > svg {
+  color: #fff !important;
+}
+
+.box-design > .title > div > input[type="checkbox"] {
+  border-color: #fff !important;
+}
+
+.box-design > .title > div > input[type="checkbox"]:checked {
+  background-color: #6F62CB !important;
+  color: #fff !important;
+}
+
 .box-design > .content {
   background-color: #fff !important;
 }
@@ -501,6 +562,26 @@
 
 .box-design > .content > p > span {
   color: #777 !important;
+}
+
+.box-design > .content > label:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+}
+
+.box-design > .content > label > div > input[type="checkbox"] {
+  border-color: #000 !important;
+}
+
+.box-design > .content > label > div > input[type="checkbox"]:checked {
+  background-color: #6F62CB !important;
+  color: #fff !important;
+}
+
+.box-design > .content > label > div > p {
+  color: #000 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
 }
 
 .box-design > .content > div > div > div {
@@ -793,6 +874,18 @@
   border-radius: 16px !important;
 }
 
+@media (max-width: 380px) {
+  .mass-container-design {
+    text-align: center !important;
+  }
+  .mass-container-design > button {
+    margin: 0 10px 10px 10px;
+  }
+  .mass-container-design > button:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .rename-file-location-info {
   color: #000;
 }
@@ -871,5 +964,55 @@
   background: #777 !important;
   color: #000 !important;
   border-radius: 20px !important;
+}
+
+.search-term-form-switch {
+  background: #fff !important;
+  border-radius: 20px !important;
+  border: 2px solid #c4c4c4 !important;
+}
+
+.search-term-form-switch label {
+  color: #000;
+  font-weight: 600;
+}
+
+.search-term-form-switch p {
+  color: #c4c4c4;
+}
+
+.search-term-form-switch > div > div > div > input[type="checkbox"]:checked + label {
+  background: #6F62CB !important;
+}
+
+.search-term-form-switch > div > div > div > label {
+  border-color: #6F62CB !important;
+  background: #777 !important;
+}
+
+.row-container-design {
+  background: #fff !important;
+  color: #000 !important;
+  border-radius: 20px !important;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+  margin-bottom: 20px !important;
+}
+
+.row-container-design > svg {
+  color: #000;
+}
+
+.row-container-design > button > svg {
+  color: #000;
+}
+
+.row-container-design > div > p {
+  color: #000;
+}
+
+.row-container-design > div > div > div {
+  background: #777;
 }
 /*# sourceMappingURL=style.css.map */
