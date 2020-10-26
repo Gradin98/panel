@@ -49,6 +49,7 @@ export default ({ scheduleId, onDeleted }: Props) => {
                 Are you sure you want to delete this schedule? All tasks will be removed and any running processes
                 will be terminated.
             </ConfirmationModal>
+
             <Button className={'file-button-red'} css={tw`mr-4`} color={'red'} isSecondary onClick={() => setVisible(true)}>
                 Delete
             </Button>

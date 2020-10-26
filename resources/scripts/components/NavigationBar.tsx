@@ -62,7 +62,9 @@ export default () => {
                         <FontAwesomeIcon icon={faUserCircle}/>
                     </NavLink>
                     {rootAdmin &&
+
                     <a href={'/admin'} target={'_blank'} rel={'noreferrer'} className={'navigation-item'}>
+                      
                         <FontAwesomeIcon icon={faCogs}/>
                     </a>
                     }

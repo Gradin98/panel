@@ -19,13 +19,12 @@ export default ({ subuser }: Props) => {
 
     return (
         <GreyRowBox css={tw`mb-2`}>
-            {visible &&
             <EditSubuserModal
-                appear
-                visible
                 subuser={subuser}
-                onDismissed={() => setVisible(false)}
+                visible={visible}
+                onModalDismissed={() => setVisible(false)}
             />
+
             }
             <div css={tw`hidden md:block`}>
                 <FontAwesomeIcon icon={faUser} fixedWidth/>

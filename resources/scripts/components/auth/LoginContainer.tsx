@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import login from '@/api/auth/login';
 import LoginFormContainer from '@/components/auth/LoginFormContainer';
@@ -23,13 +23,23 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
     const { clearFlashes, clearAndAddHttpError } = useFlash();
     const { enabled: recaptchaEnabled, siteKey } = useStoreState(state => state.settings.data!.recaptcha);
 
+    useEffect(() => {
+        clearFlashes();
+    }, []);
+
     const onSubmit = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
         clearFlashes();
 
         // If there is no token in the state yet, request the token and then abort this submit request
         // since it will be re-submitted when the recaptcha data is returned by the component.
         if (recaptchaEnabled && !token) {
-            ref.current!.execute().catch(error => console.error(error));
+            ref.current!.execute().catch(error => {
+                console.error(error);
+
+                setSubmitting(false);
+                clearAndAddHttpError({ error });
+            });
+
             return;
         }
 
@@ -46,6 +56,9 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
             .catch(error => {
                 console.error(error);
 
+                setToken('');
+                if (ref.current) ref.current.reset();
+
                 setSubmitting(false);
                 clearAndAddHttpError({ error });
             });
@@ -61,6 +74,7 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
+
                 <LoginFormContainer title={'INTRĂ ÎN CONT'}
                     css={tw`w-full flex`}
                     className={'login-container'}
@@ -71,21 +85,25 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
                             label={'Email'}
                             id={'username'}
                             name={'username'}
+                            disabled={isSubmitting}
                             light
                         />
                     </div>
 
                     <div css={tw`mt-6`} className={'form-login-design'}>
                         <Field
+                            light
                             type={'password'}
                             label={'Parola'}
                             id={'password'}
                             name={'password'}
-                            light
+                            disabled={isSubmitting}
                         />
                     </div>
+
                     <div css={tw`mt-6`} className={'login-button-container'}>
-                        <Button type={'submit'} size={'xlarge'} isLoading={isSubmitting} className={'button-login'}>
+                        <Button type={'submit'} size={'xlarge'} isLoading={isSubmitting} disabled={isSubmitting} className={'button-login'}>
+
                             Login
                         </Button>
                     </div>
