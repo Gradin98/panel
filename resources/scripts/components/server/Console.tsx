@@ -143,7 +143,7 @@ export default () => {
     }, [ connected, instance ]);
 
     return (
-        <div css={tw`text-xs font-mono relative`}>
+        <div css={tw`text-xs font-mono relative`} className={'terminal-design'}>
             <SpinnerOverlay visible={!connected} size={'large'}/>
             <div
                 css={[
@@ -158,7 +158,7 @@ export default () => {
                 <TerminalDiv id={'terminal'} ref={ref}/>
             </div>
             {canSendCommands &&
-            <div css={tw`rounded-b bg-neutral-900 text-neutral-100 flex`}>
+            <div css={tw`rounded-b bg-neutral-900 text-neutral-100 flex`} className={'terminal-design-input'}>
                 <div css={tw`flex-shrink-0 p-2 font-bold`}>$</div>
                 <div css={tw`w-full`}>
                     <input

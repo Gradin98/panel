@@ -59,6 +59,7 @@ const FileObjectRow = ({ file }: { file: FileObject }) => (
             e.preventDefault();
             window.dispatchEvent(new CustomEvent(`pterodactyl:files:ctx:${file.key}`, { detail: e.clientX }));
         }}
+        className={'file-line-design'}
     >
         <SelectFileCheckbox name={file.name}/>
         <Clickable file={file}>

@@ -24,6 +24,7 @@ export default ({ schedule }: { schedule: Schedule }) => (
                     tw`py-1 px-3 rounded text-xs uppercase text-white sm:hidden`,
                     schedule.isActive ? tw`bg-green-600` : tw`bg-neutral-400`,
                 ]}
+                className={schedule.isActive ? 'label-scheduler-green' : 'label-server-status'}
             >
                 {schedule.isActive ? 'Active' : 'Inactive'}
             </p>
@@ -35,6 +36,7 @@ export default ({ schedule }: { schedule: Schedule }) => (
                     tw`py-1 px-3 rounded text-xs uppercase text-white hidden sm:block`,
                     schedule.isActive && !schedule.isProcessing ? tw`bg-green-600` : tw`bg-neutral-400`,
                 ]}
+                className={schedule.isActive ? 'label-scheduler-green' : 'label-server-status'}
             >
                 {schedule.isProcessing ?
                     'Processing'

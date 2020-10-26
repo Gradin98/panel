@@ -45,7 +45,7 @@ const VariableBox = ({ variable }: Props) => {
     return (
         <TitledGreyBox
             title={
-                <p css={tw`text-sm uppercase`}>
+                <p css={tw`text-sm uppercase`} className={'startup-design-readonly'}>
                     {!variable.isEditable &&
                     <span css={tw`bg-neutral-700 text-xs py-1 px-2 rounded-full mr-2 mb-1`}>Read Only</span>
                     }

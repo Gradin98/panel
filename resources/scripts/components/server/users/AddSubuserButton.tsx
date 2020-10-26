@@ -10,8 +10,10 @@ export default () => {
 
     return (
         <>
+
+            {visible && <EditSubuserModal appear visible onDismissed={() => setVisible(false)}/>}
             <EditSubuserModal visible={visible} onModalDismissed={() => setVisible(false)}/>
-            <Button onClick={() => setVisible(true)}>
+            <Button className={'long-file-button-green'} onClick={() => setVisible(true)}>
                 <FontAwesomeIcon icon={faUserPlus} css={tw`mr-1`}/> New User
             </Button>
         </>

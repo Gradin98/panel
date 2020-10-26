@@ -45,7 +45,7 @@ export default () => {
         <TitledGreyBox title={'Reinstall Server'} css={tw`relative`}>
             <ConfirmationModal
                 title={'Confirm server reinstallation'}
-                buttonText={'Yes, reinstall server'}
+                buttonText={'Reinstall server'}
                 onConfirmed={reinstall}
                 showSpinnerOverlay={isSubmitting}
                 visible={modalVisible}

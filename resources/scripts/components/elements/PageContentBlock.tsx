@@ -26,7 +26,7 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                     }
                     {children}
                 </ContentContainer>
-                <ContentContainer css={tw`mb-4`}>
+                {/* <ContentContainer css={tw`mb-4`}>
                     <p css={tw`text-center text-neutral-500 text-xs`}>
                         &copy; 2015 - 2020&nbsp;
                         <a
@@ -38,7 +38,7 @@ const PageContentBlock: React.FC<PageContentBlockProps> = ({ title, showFlashKey
                             Pterodactyl Software
                         </a>
                     </p>
-                </ContentContainer>
+                </ContentContainer> */}
             </>
         </CSSTransition>
     );

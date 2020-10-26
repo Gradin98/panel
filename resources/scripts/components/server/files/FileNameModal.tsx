@@ -41,15 +41,18 @@ export default ({ onFileNamed, onDismissed, ...props }: Props) => {
                     {...props}
                 >
                     <Form>
-                        <Field
-                            id={'fileName'}
-                            name={'fileName'}
-                            label={'File Name'}
-                            description={'Enter the name that this file should be saved as.'}
-                            autoFocus
-                        />
-                        <div css={tw`mt-6 text-right`}>
-                            <Button>Create File</Button>
+                        <div className={'search-term-form'}>
+                            <Field
+                                id={'fileName'}
+                                name={'fileName'}
+                                label={'File Name'}
+                                description={'Enter the name that this file should be saved as.'}
+                                autoFocus
+                            />
+                        </div>
+
+                        <div css={tw`mt-6 text-right`} >
+                            <Button className={'long-file-button-green'}>Create File</Button>
                         </div>
                     </Form>
                 </Modal>

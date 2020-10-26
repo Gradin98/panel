@@ -43,31 +43,32 @@ const RightNavigation = styled.div`
 `;
 
 export default () => {
-    const name = useStoreState((state: ApplicationStore) => state.settings.data!.name);
     const rootAdmin = useStoreState((state: ApplicationStore) => state.user.data!.rootAdmin);
 
     return (
-        <Navigation>
+        <Navigation className={'navbar-design'}>
             <div css={tw`mx-auto w-full flex items-center`} style={{ maxWidth: '1200px', height: '3.5rem' }}>
                 <div id={'logo'}>
                     <Link to={'/'}>
-                        {name}
+                        <img src={'/assets/svgs/light_logo.svg'} alt='logo' />
                     </Link>
                 </div>
                 <RightNavigation>
                     <SearchContainer/>
-                    <NavLink to={'/'} exact>
-                        <FontAwesomeIcon icon={faLayerGroup}/>
+                    <NavLink to={'/'} exact className={'navigation-item'}>
+                        <FontAwesomeIcon icon={faLayerGroup} />
                     </NavLink>
-                    <NavLink to={'/account'}>
+                    <NavLink to={'/account'} className={'navigation-item'}>
                         <FontAwesomeIcon icon={faUserCircle}/>
                     </NavLink>
                     {rootAdmin &&
-                    <a href={'/admin'} rel={'noreferrer'}>
+
+                    <a href={'/admin'} target={'_blank'} rel={'noreferrer'} className={'navigation-item'}>
+                      
                         <FontAwesomeIcon icon={faCogs}/>
                     </a>
                     }
-                    <a href={'/auth/logout'}>
+                    <a href={'/auth/logout'} className={'navigation-item'}>
                         <FontAwesomeIcon icon={faSignOutAlt}/>
                     </a>
                 </RightNavigation>

@@ -129,7 +129,7 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
             <ConfirmationModal
                 visible={showConfirmation}
                 title={`Delete this ${file.isFile ? 'File' : 'Directory'}?`}
-                buttonText={`Yes, Delete ${file.isFile ? 'File' : 'Directory'}`}
+                buttonText={`Delete ${file.isFile ? 'File' : 'Directory'}`}
                 onConfirmed={doDeletion}
                 onModalDismissed={() => setShowConfirmation(false)}
             >
@@ -154,28 +154,28 @@ const FileDropdownMenu = ({ file }: { file: FileObject }) => {
                 )}
             >
                 <Can action={'file.update'}>
-                    <Row onClick={() => setModal('rename')} icon={faPencilAlt} title={'Rename'}/>
-                    <Row onClick={() => setModal('move')} icon={faLevelUpAlt} title={'Move'}/>
+                    <Row onClick={() => setModal('rename')} icon={faPencilAlt} className={'file-dropdown-menu'} title={'Rename'}/>
+                    <Row onClick={() => setModal('move')} icon={faLevelUpAlt} className={'file-dropdown-menu'} title={'Move'}/>
                 </Can>
                 {file.isFile &&
                 <Can action={'file.create'}>
-                    <Row onClick={doCopy} icon={faCopy} title={'Copy'}/>
+                    <Row onClick={doCopy} icon={faCopy} className={'file-dropdown-menu'} title={'Copy'}/>
                 </Can>
                 }
                 {file.isArchiveType() ?
                     <Can action={'file.create'}>
-                        <Row onClick={doUnarchive} icon={faBoxOpen} title={'Unarchive'}/>
+                        <Row onClick={doUnarchive} icon={faBoxOpen} className={'file-dropdown-menu'} title={'Unarchive'}/>
                     </Can>
                     :
                     <Can action={'file.archive'}>
-                        <Row onClick={doArchive} icon={faFileArchive} title={'Archive'}/>
+                        <Row onClick={doArchive} icon={faFileArchive} className={'file-dropdown-menu'} title={'Archive'}/>
                     </Can>
                 }
                 {file.isFile &&
-                    <Row onClick={doDownload} icon={faFileDownload} title={'Download'}/>
+                    <Row onClick={doDownload} icon={faFileDownload} className={'file-dropdown-menu'} title={'Download'}/>
                 }
                 <Can action={'file.delete'}>
-                    <Row onClick={() => setShowConfirmation(true)} icon={faTrashAlt} title={'Delete'} $danger/>
+                    <Row onClick={() => setShowConfirmation(true)} className={'file-dropdown-menu'} icon={faTrashAlt} title={'Delete'} $danger/>
                 </Can>
             </DropdownMenu>
         </>

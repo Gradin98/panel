@@ -44,7 +44,7 @@ export default ({ withinFileEditor, isNewFile }: Props) => {
     };
 
     return (
-        <div css={tw`flex items-center text-sm mb-4 text-neutral-500`}>
+        <div css={tw`flex items-center text-sm mb-4 text-neutral-500`} className={'file-location-design'}>
             {(files && files.length > 0 && !params?.action) ?
                 <FileActionCheckbox
                     type={'checkbox'}

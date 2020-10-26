@@ -52,57 +52,61 @@ export default ({ match, location }: RouteComponentProps<{ token: string }>) => 
                 passwordConfirmation: '',
             }}
             validationSchema={object().shape({
-                password: string().required('A new password is required.')
-                    .min(8, 'Your new password should be at least 8 characters in length.'),
+                password: string().required('Adaugă o nouă parolă.')
+                    .min(8, 'Parola trebuie să fie minim 8 caractere.'),
                 passwordConfirmation: string()
-                    .required('Your new password does not match.')
+                    .required('Parolele nu se potrivesc.')
                     // @ts-ignore
-                    .oneOf([ ref('password'), null ], 'Your new password does not match.'),
+                    .oneOf([ ref('password'), null ], 'Parolele nu se potrivesc.'),
             })}
         >
             {({ isSubmitting }) => (
                 <LoginFormContainer
-                    title={'Reset Password'}
+                    title={'RESETARE PAROLĂ'}
                     css={tw`w-full flex`}
+                    className={'login-container'}
                 >
-                    <div>
+                    <div className={'form-login-design'}>
                         <label>Email</label>
                         <Input value={email} isLight disabled/>
                     </div>
-                    <div css={tw`mt-6`}>
+                    <div css={tw`mt-6`} className={'form-login-design'}>
                         <Field
                             light
-                            label={'New Password'}
+                            label={'Parolă nouă'}
                             name={'password'}
                             type={'password'}
-                            description={'Passwords must be at least 8 characters in length.'}
+                            description={'Parola trebuie să fie minim 8 caractere.'}
                         />
                     </div>
-                    <div css={tw`mt-6`}>
+                    <div css={tw`mt-6`} className={'form-login-design'}>
                         <Field
                             light
-                            label={'Confirm New Password'}
+                            label={'Confirmare parolă nouă'}
                             name={'passwordConfirmation'}
                             type={'password'}
                         />
                     </div>
-                    <div css={tw`mt-6`}>
+                    <div css={tw`mt-6`} className={'login-button-container'}>
                         <Button
                             size={'xlarge'}
                             type={'submit'}
                             disabled={isSubmitting}
                             isLoading={isSubmitting}
+                            className={'button-login'}
                         >
-                            Reset Password
+                            Reset
                         </Button>
                     </div>
-                    <div css={tw`mt-6 text-center`}>
+                    <div css={tw`mt-6 text-center`} className={'text-forgot-password'}>
                         <Link
                             to={'/auth/login'}
+                            className={'forgot-password'}
                             css={tw`text-xs text-neutral-500 tracking-wide no-underline uppercase hover:text-neutral-600`}
                         >
-                            Return to Login
+                            Înapoi la Login
                         </Link>
+                        <p>Contul se crează automat numai la achiziționarea produselor de pe site-ul <b>fun-network.ro</b></p>
                     </div>
                 </LoginFormContainer>
             )}

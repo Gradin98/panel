@@ -17,13 +17,13 @@ const ConfirmationModal = ({ title, children, buttonText, onConfirmed }: Props) 
 
     return (
         <>
-            <h2 css={tw`text-2xl mb-6`}>{title}</h2>
-            <p css={tw`text-sm`}>{children}</p>
+            <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>{title}</h2>
+            <p css={tw`text-sm`} className={'database-description-delete'}>{children}</p>
             <div css={tw`flex flex-wrap items-center justify-end mt-8`}>
-                <Button isSecondary onClick={() => dismiss()} css={tw`w-full sm:w-auto`}>
+                <Button isSecondary className={'file-button-green'} onClick={() => dismiss()} css={tw`w-full sm:w-auto`}>
                     Cancel
                 </Button>
-                <Button color={'red'} css={tw`w-full sm:w-auto mt-4 sm:mt-0 sm:ml-4`} onClick={() => onConfirmed()}>
+                <Button color={'red'} className={'long-file-button-red'} css={tw`w-full sm:w-auto mt-4 sm:mt-0 sm:ml-4`} onClick={() => onConfirmed()}>
                     {buttonText}
                 </Button>
             </div>

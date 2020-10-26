@@ -76,6 +76,7 @@ export default ({ ...props }: Props) => {
     return (
         <Formik
             onSubmit={search}
+            className={'search-modal'}
             validationSchema={object().shape({
                 term: string().min(3, 'Please enter at least three characters to begin searching.'),
             })}
@@ -83,7 +84,7 @@ export default ({ ...props }: Props) => {
         >
             {({ isSubmitting }) => (
                 <Modal {...props}>
-                    <Form>
+                    <Form className={'search-term-form'}>
                         <FormikFieldWrapper
                             name={'term'}
                             label={'Search term'}
@@ -100,6 +101,7 @@ export default ({ ...props }: Props) => {
                         {
                             servers.map(server => (
                                 <ServerResult
+                                    className={'search-result-container'}
                                     key={server.uuid}
                                     to={`/server/${server.id}`}
                                     onClick={() => props.onDismissed()}

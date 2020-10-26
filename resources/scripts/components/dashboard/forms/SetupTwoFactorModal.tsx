@@ -53,6 +53,14 @@ export default ({ onDismissed, ...props }: RequiredModalProps) => {
         onDismissed();
     };
 
+    const urlToGoogle = () => {
+        document.location.href = 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2';
+    };
+
+    const urlToApple = () => {
+        document.location.href = 'https://apps.apple.com/us/app/google-authenticator/id388497605';
+    };
+
     return (
         <Formik
             onSubmit={submit}
@@ -75,21 +83,18 @@ export default ({ onDismissed, ...props }: RequiredModalProps) => {
                 >
                     {recoveryTokens.length > 0 ?
                         <>
-                            <h2 css={tw`text-2xl mb-4`}>Two-factor authentication enabled</h2>
-                            <p css={tw`text-neutral-300`}>
-                                Two-factor authentication has been enabled on your account. Should you loose access to
-                                this device you&apos;ll need to use on of the codes displayed below in order to access your
-                                account.
+                            <h2 css={tw`text-2xl mb-4`} className={'twofa-title-text'}>Autentificare 2FA activată</h2>
+                            <p css={tw`text-neutral-300`} className={'twofa-text-description-finish'}>
+                            Opțiunea de securitate Two-Factor Authentification este activată. Dacă pierdeți accesul la device-ul pe care-l folosiți la autentificare atunci o să aveți nevoie de codurile de mai jos.
                             </p>
-                            <p css={tw`text-neutral-300 mt-4`}>
-                                <strong>These codes will not be displayed again.</strong> Please take note of them now
-                                by storing them in a secure repository such as a password manager.
+                            <p css={tw`text-neutral-300 mt-4`} className={'twofa-text-description-finish twofa-text-margin-top'}>
+                                <strong>Aceste coduri nu vor mai fi afișate niciodată.</strong> Te rugăm să le păstrezi într-un loc cât mai sigur, cum ar fi un password manager.
                             </p>
-                            <pre css={tw`text-sm mt-4 rounded font-mono bg-neutral-900 p-4`}>
+                            <pre css={tw`text-sm mt-4 rounded font-mono bg-neutral-900 p-4`} className={'twofa-list-of-tokens'}>
                                 {recoveryTokens.map(token => <code key={token} css={tw`block mb-1`}>{token}</code>)}
                             </pre>
                             <div css={tw`text-right`}>
-                                <Button css={tw`mt-6`} onClick={dismiss}>
+                                <Button css={tw`mt-6`} onClick={dismiss} className={'button-red'}>
                                     Close
                                 </Button>
                             </div>
@@ -98,8 +103,8 @@ export default ({ onDismissed, ...props }: RequiredModalProps) => {
                         <Form css={tw`mb-0`}>
                             <FlashMessageRender css={tw`mb-6`} byKey={'account:two-factor'}/>
                             <div css={tw`flex flex-wrap`}>
-                                <div css={tw`w-full md:flex-1`}>
-                                    <div css={tw`w-32 h-32 md:w-64 md:h-64 bg-neutral-600 p-2 rounded mx-auto`}>
+                                <div css={tw`w-full md:flex-1`} className={'twofa-image-container-margin'}>
+                                    <div css={tw`w-32 h-32 md:w-64 md:h-64 bg-neutral-600 p-2 rounded mx-auto`} className={'twofa-image-container'}>
                                         {!token || !token.length ?
                                             <img
                                                 src={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='}
@@ -115,18 +120,29 @@ export default ({ onDismissed, ...props }: RequiredModalProps) => {
                                     </div>
                                 </div>
                                 <div css={tw`w-full mt-6 md:mt-0 md:flex-1 md:flex md:flex-col`}>
-                                    <div css={tw`flex-1`}>
+                                    <div className={'instructiuni-twofa'}>
+                                        <p>Instrucțiuni</p>
+                                        <p>1. Descarcă aplicația Google Authentificator de pe Google Play sau App Store.</p>
+                                        <p>2. Scanează codul QR.</p>
+                                        <p>3. Introdu codul în căsuța de mai jos.</p>
+                                    </div>
+                                    <div className={'image-app-stores'}>
+                                        <img onClick={urlToGoogle} src={'/assets/svgs/googleplay.svg'} alt='googleplay'/>
+                                        <img onClick={urlToApple} src={'/assets/svgs/appstore.svg'} alt='appstore'/>
+                                    </div>
+                                    <div css={tw`flex-1`} className={'form-twofa-design'}>
                                         <Field
                                             id={'code'}
                                             name={'code'}
                                             type={'text'}
                                             title={'Code From Authenticator'}
-                                            description={'Enter the code from your authenticator device after scanning the QR image.'}
+                                            label={'Introduceți codul'}
+                                            description={'După scanarea imaginii QR, introduceți codul de pe dispozitivul de autentificare ales.'}
                                             autoFocus={!loading}
                                         />
                                     </div>
-                                    <div css={tw`mt-6 md:mt-0 text-right`}>
-                                        <Button>
+                                    <div css={tw`mt-6 md:mt-0 text-right`} className={'login-button-container'}>
+                                        <Button className={'button-login'} style={ { marginTop: '20px' }}>
                                             Setup
                                         </Button>
                                     </div>

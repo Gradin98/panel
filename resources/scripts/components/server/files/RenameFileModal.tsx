@@ -66,7 +66,7 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
                                 useMoveTerminology ? tw`items-center` : tw`items-end`,
                             ]}
                         >
-                            <div css={tw`w-full sm:flex-1 sm:mr-4`}>
+                            <div css={tw`w-full sm:flex-1 sm:mr-4`} className={'search-term-form'}>
                                 <Field
                                     type={'string'}
                                     id={'file_name'}
@@ -80,11 +80,11 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
                                 />
                             </div>
                             <div css={tw`w-full sm:w-auto mt-4 sm:mt-0`}>
-                                <Button css={tw`w-full`}>{useMoveTerminology ? 'Move' : 'Rename'}</Button>
+                                <Button className={'file-button-green'} css={tw`w-full`}>{useMoveTerminology ? 'Move' : 'Rename'}</Button>
                             </div>
                         </div>
                         {useMoveTerminology &&
-                        <p css={tw`text-xs mt-2 text-neutral-400`}>
+                        <p css={tw`text-xs mt-2 text-neutral-400`} className={'rename-file-location-info'}>
                             <strong css={tw`text-neutral-200`}>New location:</strong>
                             &nbsp;/home/container/{join(directory, values.name).replace(/^(\.\.\/|\/)+/, '')}
                         </p>

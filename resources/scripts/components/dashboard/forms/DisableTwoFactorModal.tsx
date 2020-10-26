@@ -39,27 +39,31 @@ export default ({ ...props }: RequiredModalProps) => {
                 password: '',
             }}
             validationSchema={object().shape({
-                password: string().required('You must provider your current password in order to continue.'),
+                password: string().required('Introduceți parola pentru a dezactiva two-factor authentification.'),
             })}
         >
             {({ isSubmitting, isValid }) => (
                 <Modal {...props} dismissable={!isSubmitting} showSpinnerOverlay={isSubmitting}>
                     <Form className={'mb-0'}>
                         <FlashMessageRender css={tw`mb-6`} byKey={'account:two-factor'}/>
-                        <Field
-                            id={'password'}
-                            name={'password'}
-                            type={'password'}
-                            label={'Current Password'}
-                            description={'In order to disable two-factor authentication you will need to provide your account password.'}
-                            autoFocus
-                        />
+                        <div className={'form-twofa-design'}>
+                            <Field
+                                id={'password'}
+                                name={'password'}
+                                type={'password'}
+                                label={'Parolă'}
+                                description={'Introduceți parola pentru a dezactiva two-factor authentification.'}
+                                autoFocus
+                            />
+                        </div>
+
                         <div css={tw`mt-6 text-right`}>
                             <Button
                                 color={'red'}
                                 disabled={!isValid}
+                                className={'button-red'}
                             >
-                                Disable Two-Factor
+                               DEZACTIVEAZĂ
                             </Button>
                         </div>
                     </Form>

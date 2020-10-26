@@ -14,6 +14,14 @@ export default ({ location, history, match }: RouteComponentProps) => {
 
     return (
         <div className={'pt-8 xl:pt-32'}>
+            <style dangerouslySetInnerHTML={ {
+                __html: `
+                ::-webkit-scrollbar {
+                    width: 0 !important;
+                }
+                `
+            }}
+            />
             <Switch location={location}>
                 <Route path={`${match.path}/login`} component={LoginContainer} exact/>
                 <Route path={`${match.path}/login/checkpoint`} component={LoginCheckpointContainer}/>

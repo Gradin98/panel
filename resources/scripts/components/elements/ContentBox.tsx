@@ -12,7 +12,7 @@ type Props = Readonly<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElemen
 
 const ContentBox = ({ title, borderColor, showFlashes, showLoadingOverlay, children, ...props }: Props) => (
     <div {...props}>
-        {title && <h2 css={tw`text-neutral-300 mb-4 px-4 text-2xl`}>{title}</h2>}
+        {title && <h2 css={tw`text-neutral-300 mb-4 px-4 text-2xl`} className={'title-container'}>{title}</h2>}
         {showFlashes &&
         <FlashMessageRender
             byKey={typeof showFlashes === 'string' ? showFlashes : undefined}
@@ -24,6 +24,7 @@ const ContentBox = ({ title, borderColor, showFlashes, showLoadingOverlay, child
                 tw`bg-neutral-700 p-4 rounded shadow-lg relative`,
                 !!borderColor && tw`border-t-4`,
             ]}
+            className={'user-container-data'}
         >
             <SpinnerOverlay visible={showLoadingOverlay || false}/>
             {children}

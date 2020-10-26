@@ -61,7 +61,7 @@ export default () => {
                                 {showOnlyAdmin ?
                                     'There are no other servers to display.'
                                     :
-                                    'There are no servers associated with your account.'
+                                    'Nu există servere asociate cu acest cont.'
                                 }
                             </p>
                     )}

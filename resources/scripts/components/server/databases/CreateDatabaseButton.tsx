@@ -67,16 +67,18 @@ export default () => {
                             }}
                         >
                             <FlashMessageRender byKey={'database:create'} css={tw`mb-6`}/>
-                            <h2 css={tw`text-2xl mb-6`}>Create new database</h2>
+                            <h2 css={tw`text-2xl mb-6`} className={'database-title-delete'}>Create new database</h2>
                             <Form css={tw`m-0`}>
-                                <Field
-                                    type={'string'}
-                                    id={'database_name'}
-                                    name={'databaseName'}
-                                    label={'Database Name'}
-                                    description={'A descriptive name for your database instance.'}
-                                />
-                                <div css={tw`mt-6`}>
+                                <div css={tw`mt-6`} className={'search-term-form'}>
+                                    <Field
+                                        type={'string'}
+                                        id={'database_name'}
+                                        name={'databaseName'}
+                                        label={'Database Name'}
+                                        description={'A descriptive name for your database instance.'}
+                                    />
+                                </div>
+                                <div css={tw`mt-6`} className={'search-term-form'}>
                                     <Field
                                         type={'string'}
                                         id={'connections_from'}
@@ -88,13 +90,14 @@ export default () => {
                                 <div css={tw`flex flex-wrap justify-end mt-6`}>
                                     <Button
                                         type={'button'}
+                                        className={'file-button-red'}
                                         isSecondary
                                         css={tw`w-full sm:w-auto sm:mr-2`}
                                         onClick={() => setVisible(false)}
                                     >
                                         Cancel
                                     </Button>
-                                    <Button css={tw`w-full mt-4 sm:w-auto sm:mt-0`} type={'submit'}>
+                                    <Button css={tw`w-full mt-4 sm:w-auto sm:mt-0`} className={'long-file-button-green'} type={'submit'}>
                                         Create Database
                                     </Button>
                                 </div>
@@ -103,7 +106,7 @@ export default () => {
                     )
                 }
             </Formik>
-            <Button onClick={() => setVisible(true)}>
+            <Button className={'long-file-button-green'} onClick={() => setVisible(true)}>
                 New Database
             </Button>
         </>

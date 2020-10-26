@@ -50,7 +50,7 @@ const StartupContainer = () => {
             <ServerContentBlock title={'Startup Settings'}>
                 <TitledGreyBox title={'Startup Command'}>
                     <div css={tw`px-1 py-2`}>
-                        <p css={tw`font-mono bg-neutral-900 rounded py-2 px-4`}>
+                        <p css={tw`font-mono bg-neutral-900 rounded py-2 px-4`} className={'startup-design-readonly'}>
                             {data.invocation}
                         </p>
                     </div>

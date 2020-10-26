@@ -60,32 +60,34 @@ export default () => {
                         <React.Fragment>
                             <SpinnerOverlay size={'large'} visible={isSubmitting}/>
                             <Form css={tw`m-0`}>
-                                <Field
-                                    id={'current_password'}
-                                    type={'password'}
-                                    name={'current'}
-                                    label={'Current Password'}
-                                />
-                                <div css={tw`mt-6`}>
+                                <div className={'form-login-design'}>
+                                    <Field
+                                        id={'current_password'}
+                                        type={'password'}
+                                        name={'current'}
+                                        label={'Parolă curentă'}
+                                    />
+                                </div>
+                                <div css={tw`mt-6`} className={'form-login-design'}>
                                     <Field
                                         id={'new_password'}
                                         type={'password'}
                                         name={'password'}
-                                        label={'New Password'}
-                                        description={'Your new password should be at least 8 characters in length and unique to this website.'}
+                                        label={'Parolă nouă'}
+                                        description={'Parola trebuie să fie minim 8 caractere.'}
                                     />
                                 </div>
-                                <div css={tw`mt-6`}>
+                                <div css={tw`mt-6`} className={'form-login-design'}>
                                     <Field
                                         id={'confirm_password'}
                                         type={'password'}
                                         name={'confirmPassword'}
-                                        label={'Confirm New Password'}
+                                        label={'Confirmare parolă nouă'}
                                     />
                                 </div>
-                                <div css={tw`mt-6`}>
-                                    <Button size={'small'} disabled={isSubmitting || !isValid}>
-                                        Update Password
+                                <div css={tw`mt-6`} className={'login-button-container'}>
+                                    <Button size={'small'} disabled={isSubmitting || !isValid} className={'button-login'}>
+                                        UPDATE
                                     </Button>
                                 </div>
                             </Form>

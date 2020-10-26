@@ -25,8 +25,8 @@ const chartDefaults = (ticks?: Chart.TickOptions | undefined): ChartConfiguratio
             },
             line: {
                 tension: 0.3,
-                backgroundColor: 'rgba(15, 178, 184, 0.45)',
-                borderColor: '#32D0D9',
+                backgroundColor: 'rgba(163, 209, 51, 0.45)',
+                borderColor: '#a3d133',
             },
         },
         scales: {
@@ -41,14 +41,14 @@ const chartDefaults = (ticks?: Chart.TickOptions | undefined): ChartConfiguratio
             yAxes: [ {
                 gridLines: {
                     drawTicks: false,
-                    color: 'rgba(229, 232, 235, 0.15)',
-                    zeroLineColor: 'rgba(15, 178, 184, 0.45)',
+                    color: 'rgba(0, 0, 0, 0.15)',
+                    zeroLineColor: 'rgba(163, 209, 51, 0.45)',
                     zeroLineWidth: 3,
                 },
                 ticks: merge(ticks || {}, {
                     fontSize: 10,
                     fontFamily: '"IBM Plex Mono", monospace',
-                    fontColor: 'rgb(229, 232, 235)',
+                    fontColor: 'rgb(0, 0, 0)',
                     min: 0,
                     beginAtZero: true,
                     maxTicksLimit: 5,

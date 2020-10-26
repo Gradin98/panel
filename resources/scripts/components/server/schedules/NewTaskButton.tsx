@@ -19,7 +19,8 @@ export default ({ schedule }: Props) => {
                 onDismissed={() => setVisible(false)}
             />
             }
-            <Button onClick={() => setVisible(true)} css={tw`flex-1`}>
+
+            <Button className={'file-button-green'} onClick={() => setVisible(true)}>
                 New Task
             </Button>
         </>

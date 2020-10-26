@@ -74,12 +74,13 @@ export default ({ server, className }: { server: Server; className?: string }) =
 
     const disklimit = server.limits.disk !== 0 ? megabytesToHuman(server.limits.disk) : 'Unlimited';
     const memorylimit = server.limits.memory !== 0 ? megabytesToHuman(server.limits.memory) : 'Unlimited';
+    const iconColor = stats?.status === 'offline' ? 'status-offline' : stats?.status === 'running' ? 'status-online' : 'status-unknown';
 
     return (
-        <StatusIndicatorBox as={Link} to={`/server/${server.id}`} className={className} $status={stats?.status}>
+        <StatusIndicatorBox as={Link} to={`/server/${server.id}`} className={className + ' server-bar-hover'} $status={stats?.status}>
             <div css={tw`flex items-center col-span-12 sm:col-span-5 lg:col-span-6`}>
-                <div className={'icon'} css={tw`mr-4`}>
-                    <FontAwesomeIcon icon={faServer}/>
+                <div className={'icon ' + iconColor} css={tw`mr-4`}>
+                    <FontAwesomeIcon icon={faServer} className={'icon-color-svg'}/>
                 </div>
                 <div>
                     <p css={tw`text-lg break-words`}>{server.name}</p>
@@ -105,15 +106,15 @@ export default ({ server, className }: { server: Server; className?: string }) =
                     !statsError ?
                         <Spinner size={'small'}/>
                         :
-                        server.isInstalling ?
+                        !server.isInstalling ?
                             <div css={tw`flex-1 text-center`}>
-                                <span css={tw`bg-neutral-500 rounded px-2 py-1 text-neutral-100 text-xs`}>
-                                    Installing
+                                <span css={tw`bg-neutral-500 rounded px-2 py-1 text-neutral-100 text-xs`} className={'label-server-status'}>
+                                    Instalare
                                 </span>
                             </div>
                             :
                             <div css={tw`flex-1 text-center`}>
-                                <span css={tw`bg-red-500 rounded px-2 py-1 text-red-100 text-xs`}>
+                                <span css={tw`bg-red-500 rounded px-2 py-1 text-red-100 text-xs`} className={'label-server-status'}>
                                     {server.isSuspended ? 'Suspended' : 'Connection Error'}
                                 </span>
                             </div>
@@ -146,7 +147,7 @@ export default ({ server, className }: { server: Server; className?: string }) =
                     </React.Fragment>
                 }
             </div>
-            <div className={'status-bar'}/>
+            {/* <div className={'status-bar'}/> */}
         </StatusIndicatorBox>
     );
 };

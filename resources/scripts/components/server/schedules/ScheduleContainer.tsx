@@ -65,7 +65,7 @@ export default ({ match, history }: RouteComponentProps) => {
                     <Can action={'schedule.create'}>
                         <div css={tw`mt-8 flex justify-end`}>
                             {visible && <EditScheduleModal appear visible onDismissed={() => setVisible(false)}/>}
-                            <Button type={'button'} onClick={() => setVisible(true)}>
+                            <Button type={'button'} className={'long-file-button-green'} onClick={() => setVisible(true)}>
                                 Create schedule
                             </Button>
                         </div>

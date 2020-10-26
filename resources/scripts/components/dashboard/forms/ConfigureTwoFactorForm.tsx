@@ -19,16 +19,17 @@ export default () => {
                 onDismissed={() => setVisible(false)}
             />
             }
-            <p css={tw`text-sm`}>
-                Two-factor authentication is currently enabled on your account.
+            <p css={tw`text-sm`} className={'twofa-color-text'}>
+                Opțiunea de Two-Factor Authentification este activată.
             </p>
-            <div css={tw`mt-6`}>
+            <div css={tw`mt-6`} className={'login-button-container'}>
                 <Button
                     color={'red'}
+                    className={'button-red'}
                     isSecondary
                     onClick={() => setVisible(true)}
                 >
-                    Disable
+                    DISABLE
                 </Button>
             </div>
         </div>
@@ -41,17 +42,17 @@ export default () => {
                 onDismissed={() => setVisible(false)}
             />
             }
-            <p css={tw`text-sm`}>
-                You do not currently have two-factor authentication enabled on your account. Click
-                the button below to begin configuring it.
+            <p css={tw`text-sm`} className={'twofa-color-text'}>
+                Nu ai activat two-factor authentification pe contul tău. Apasă pe butonul de mai jos pentru a începe configurarea.
             </p>
-            <div css={tw`mt-6`}>
+            <div css={tw`mt-6`} className={'login-button-container'}>
                 <Button
                     color={'green'}
+                    className={'button-grey'}
                     isSecondary
                     onClick={() => setVisible(true)}
                 >
-                    Begin Setup
+                    ÎNCEPE
                 </Button>
             </div>
         </div>

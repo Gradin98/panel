@@ -84,6 +84,20 @@ export default ({ match, history, location: { state } }: RouteComponentProps<Par
                 <Spinner size={'large'} centered/>
                 :
                 <>
+
+                    <GreyRowBox css={tw`cursor-pointer mb-2 flex-wrap`}>
+                        <ScheduleRow schedule={schedule}/>
+                    </GreyRowBox>
+                    <EditScheduleModal
+                        visible={showEditModal}
+                        schedule={schedule}
+                        onDismissed={() => setShowEditModal(false)}
+                    />
+                    <div css={tw`flex items-center mt-8 mb-4`}>
+                        <div css={tw`flex-1`}>
+                            <h2 css={tw`text-2xl`} className={'database-title-delete'}>Configured Tasks</h2>
+                        </div>
+
                     <ScheduleCronRow cron={schedule.cron} css={tw`sm:hidden bg-neutral-700 rounded mb-4 p-3`}/>
                     <div css={tw`hidden sm:grid grid-cols-5 md:grid-cols-7 gap-4 mb-6`}>
                         <CronBox title={'Minute'} value={schedule.cron.minute}/>
@@ -91,6 +105,7 @@ export default ({ match, history, location: { state } }: RouteComponentProps<Par
                         <CronBox title={'Day (Month)'} value={schedule.cron.dayOfMonth}/>
                         <CronBox title={'Month'} value={'*'}/>
                         <CronBox title={'Day (Week)'} value={schedule.cron.dayOfWeek}/>
+
                     </div>
                     <div css={tw`rounded shadow`}>
                         <div css={tw`sm:flex items-center bg-neutral-900 p-3 sm:p-6 border-b-4 border-neutral-600 rounded-t`}>
@@ -148,7 +163,9 @@ export default ({ match, history, location: { state } }: RouteComponentProps<Par
                         </Can>
                         {schedule.isActive && schedule.tasks.length > 0 &&
                         <Can action={'schedule.update'}>
-                            <RunScheduleButton schedule={schedule}/>
+
+                         <RunScheduleButton schedule={schedule}/>
+
                         </Can>
                         }
                     </div>

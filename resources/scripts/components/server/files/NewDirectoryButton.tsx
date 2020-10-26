@@ -82,14 +82,16 @@ export default ({ className }: WithClassname) => {
                     >
                         <FlashMessageRender key={'files:directory-modal'}/>
                         <Form css={tw`m-0`}>
-                            <Field
-                                autoFocus
-                                id={'directoryName'}
-                                name={'directoryName'}
-                                label={'Directory Name'}
-                            />
+                            <div className={'search-term-form'}>
+                                <Field
+                                    autoFocus
+                                    id={'directoryName'}
+                                    name={'directoryName'}
+                                    label={'Directory Name'}
+                                />
+                            </div>
                             <p css={tw`text-xs mt-2 text-neutral-400 break-all`}>
-                                <span css={tw`text-neutral-200`}>This directory will be created as</span>
+                                <span css={tw`text-neutral-200`} className={'rename-file-location-info'}>This directory will be created as</span>
                                 &nbsp;/home/container/
                                 <span css={tw`text-cyan-200`}>
                                     {decodeURIComponent(encodeURIComponent(
@@ -98,7 +100,7 @@ export default ({ className }: WithClassname) => {
                                 </span>
                             </p>
                             <div css={tw`flex justify-end`}>
-                                <Button css={tw`mt-8`}>
+                                <Button css={tw`mt-8`} className={'long-file-button-green'} style={{ width: '150px !important' }}>
                                     Create Directory
                                 </Button>
                             </div>
@@ -106,7 +108,7 @@ export default ({ className }: WithClassname) => {
                     </Modal>
                 )}
             </Formik>
-            <Button isSecondary onClick={() => setVisible(true)} className={className}>
+            <Button isSecondary onClick={() => setVisible(true)} className={className + ' file-button-purple'}>
                 Create Directory
             </Button>
         </>

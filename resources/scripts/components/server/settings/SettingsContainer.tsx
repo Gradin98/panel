@@ -17,6 +17,7 @@ export default () => {
     const id = ServerContext.useStoreState(state => state.server.data!.id);
     const sftpIp = ServerContext.useStoreState(state => state.server.data!.sftpDetails.ip);
     const sftpPort = ServerContext.useStoreState(state => state.server.data!.sftpDetails.port);
+    const ip = sftpIp === 'node1.fun-network.ro' ? '167.172.190.254' : 'no-ip';
 
     return (
         <ServerContentBlock title={'Settings'}>
@@ -29,7 +30,7 @@ export default () => {
                                 <Label>Server Address</Label>
                                 <Input
                                     type={'text'}
-                                    value={`sftp://${sftpIp}:${sftpPort}`}
+                                    value={`sftp://${ip}:${sftpPort}`}
                                     readOnly
                                 />
                             </div>
@@ -52,7 +53,7 @@ export default () => {
                                 <div css={tw`ml-4`}>
                                     <LinkButton
                                         isSecondary
-                                        href={`sftp://${username}.${id}@${sftpIp}:${sftpPort}`}
+                                        href={`sftp://${username}.${id}@${ip}:${sftpPort}`}
                                     >
                                         Launch SFTP
                                     </LinkButton>

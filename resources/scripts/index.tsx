@@ -5,6 +5,10 @@ import './i18n';
 import { setConfig } from 'react-hot-loader';
 
 import 'tailwindcss/dist/base.min.css';
+import './opensans.css';
+import './opensansprotdatelor.css';
+import './roboto.css';
+import './style.css';
 
 // Prevents page reloads while making component changes which
 // also avoids triggering constant loading indicators all over
